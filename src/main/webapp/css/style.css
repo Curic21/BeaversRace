@@ -1,0 +1,149 @@
+
+
+body { 
+    /*gradient background*/
+    background: #3496ba;
+    background: -moz-radial-gradient(center, ellipse cover, #3496ba 0%, #141a49 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#3496ba), color-stop(100%,#141a49));
+    background: -webkit-radial-gradient(center, ellipse cover, #3496ba 0%,#141a49 100%);
+    background: -o-radial-gradient(center, ellipse cover, #3496ba 0%,#141a49 100%);
+    background: -ms-radial-gradient(center, ellipse cover, #3496ba 0%,#141a49 100%);
+    background: radial-gradient(ellipse at center, #3496ba 0%,#141a49 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3496ba', endColorstr='#141a49',GradientType=1 );
+    color:white;
+    font-size: 100%;
+}
+.nav{
+    font-size: 150%;
+}
+
+#logo{
+    width: 80%;
+    height:80%;
+}
+
+iframe{
+    width:700px;
+    height:400px;
+}
+
+.visible-md>iframe{
+    margin-top: 6em;
+    width: 500px;
+    height: 300px;
+}
+
+.visible-xs >iframe{
+    width: 480px;
+    height: 350px;
+}
+
+
+
+#history{
+    background-image: url("../img/scroll.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    color: #330000;
+    font-family:Times New Roman;
+    font-weight: bold;
+    font-style: italic;
+    padding: 6% 0;
+}
+#sinopsis1>h1, #sinopsis2>h1, #sinopsis3>h1{
+    font-family:Times New Roman;
+    text-shadow: 1px 1px  black;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 500%;
+}
+#sinopsis1>p{
+    padding-top: 6px;
+    font-size: 2.2em;
+}
+
+#historym{
+    background-image: url("../img/scroll.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    color: #330000;
+    font-family:Times New Roman;
+    font-weight: bold;
+    font-style: italic;
+    padding:2em 0;
+}
+
+#sinopsis2>p{
+    padding-top: 3%;
+    font-size: 200%;
+}
+
+
+
+#historyp{
+    background-image: url("../img/scroll2.png");
+    background-repeat: no-repeat;
+    color: #330000;
+    font-family:Times New Roman;
+    font-weight: bold;
+    font-style: italic;
+    padding: 10em 0;
+}
+
+#sinopsis3>p{
+    margin-left: 4%;
+    width: 90%;
+    padding-top: 6px;
+    font-size: 230%;
+}
+
+
+#portfoliog> .portfolio-item > a > img{
+    margin-left: 15em;
+    width: 200%;
+    height: 25em;
+}
+#portfoliom> .portfolio-item > a > img{
+    margin-left: 15em;
+    width: 100%;
+    height: 100%;
+}
+#portfoliop> .portfolio-item > a > img{
+    width: 200%;
+    height: 25em;
+}
+
+#trailer{
+    margin: 5em 0;
+}
+video{
+    width: 50em;
+    height:30em; 
+}
+
+#video1{
+    margin-left: 5em;
+}
+#video2{
+    margin-left: 30em;
+}
+#button1{
+    margin-left: 16em;
+}
+#button2{
+    margin-left: 20em;
+}
+#contact{
+    font-size: 2em;   
+}
+
+#email{
+    color: #6affad;
+    font-size: 2em;
+    font-weight: bold;
+    border: 2px solid;
+    border-radius: 1em;
+}
+#copyright{
+    margin-top: 5em;
+}

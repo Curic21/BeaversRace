@@ -2,10 +2,21 @@
    APP custom styles. Rafael Aznar.
    ========================================================================== */
 body {
-    background-color: #F8F8F8;
-    padding-top: 60px;
-    padding-bottom: 40px;
-    background-repeat: repeat;
+ /*gradient background*/
+    background: #3496ba;
+    background: -moz-radial-gradient(center, ellipse cover, #3496ba 0%, #141a49 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#3496ba), color-stop(100%,#141a49));
+    background: -webkit-radial-gradient(center, ellipse cover, #3496ba 0%,#141a49 100%);
+    background: -o-radial-gradient(center, ellipse cover, #3496ba 0%,#141a49 100%);
+    background: -ms-radial-gradient(center, ellipse cover, #3496ba 0%,#141a49 100%);
+    background: radial-gradient(ellipse at center, #3496ba 0%,#141a49 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3496ba', endColorstr='#141a49',GradientType=1 );
+    color:white;
+    font-size: 100%;
+}
+#logo{
+    width: 80%;
+    height:80%;
 }
 .btn-toolbar {
     margin-top: 0px;
