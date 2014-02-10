@@ -11,10 +11,11 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Ajax Yield</title>
+        <title>Pixie's Tale - Official Website</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/videogame.css">
         <style>
             body {
                 padding-top: 60px;
@@ -22,13 +23,7 @@
             }
         </style>
         <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
-        <link rel="stylesheet" href="css/main.css">
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
-        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-        <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
-        <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
-        <script src="./js/vendor/jquery.validate.min.js"></script>
+        <link rel="stylesheet" href="css/main.css">   
 
     </head>
     <body>
@@ -75,12 +70,12 @@
                     }
                 %>
                 <div id="indexContenidoJsp">
-                     <!-- LOGO -->
-        <div id="top" class="header visible-lg" align='center'>
-            <div class="vert-text"><h1><img src="img/logo.png" id="logo" /></h1></div>
-        </div>
+                    <!-- LOGO -->
+                    <div id="top" class="header visible-lg" align='center'>
+                        <div class="vert-text"><h1><img src="img/logo.png" id="logo" /></h1></div>
+                    </div>
 
-        <!-- /LOGO -->
+                    <!-- /LOGO -->
                     <jsp:include page='<%=(String) request.getAttribute("contenido")%>' />                
                 </div>
                 <%
@@ -94,20 +89,16 @@
 
         <!-- carga de javascript -->
 
-        <script src="js/vendor/bootstrap.min.js"></script>
+        <!--jQuery-->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+        <!--------------------------------------->
 
-        <script src="js/vendor/bootstrap-transition.js"></script>
-        <script src="js/vendor/bootstrap-alert.js"></script>
-        <script src="js/vendor/bootstrap-modal.js"></script>
-        <script src="js/vendor/bootstrap-dropdown.js"></script>
-        <script src="js/vendor/bootstrap-scrollspy.js"></script>
-        <script src="js/vendor/bootstrap-tab.js"></script>
-        <script src="js/vendor/bootstrap-tooltip.js"></script>
-        <script src="js/vendor/bootstrap-popover.js"></script>
-        <script src="js/vendor/bootstrap-button.js"></script>
-        <script src="js/vendor/bootstrap-collapse.js"></script>
-        <script src="js/vendor/bootstrap-carousel.js"></script>
-        <script src="js/vendor/bootstrap-typeahead.js"></script>    
+        <!--Bootstrap-->
+
+        <script src="js/vendor/bootstrap.min.js"></script>   
+        <!--------------------------------------->
+
 
         <script src="js/util.js" charset="UTF-8"></script>
         <script src="js/main.js" charset="UTF-8"></script>
@@ -117,51 +108,64 @@
         <script src="js/control/requerimiento.js" charset="UTF-8"></script>
         <script src="js/control/profesor.js" charset="UTF-8"></script>
 
+
+        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
+        <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
+        <script src="./js/vendor/jquery.validate.min.js"></script>
+        <!-- <script src="./js/vendor/Box2dWeb-2.1.a.3.min.js"></script>
+         <script src="./js/vendor/Box2dWeb-2.1.a.3.js"></script>-->
+        <script src="http://box2dweb.googlecode.com/svn/trunk/Box2D.js"></script>
+        <script src="https://rawgithub.com/paulirish/1579671/raw/rAF.js"></script>
+        <script src="https://rawgithub.com/abernier/3225993/raw/loop.js"></script>
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <script src="./js/videogame.js"></script>
+
         <script>
 
-              
-    $('#lnkAlumno').unbind('click');
-                $('#lnkAlumno').click(function() {
-                    var alumno = objeto('alumno', '<%=request.getContextPath()%>');
-                    var alumnoView = vista(alumno, '<%=request.getContextPath()%>');
 
-                    $('#indexContenidoJsp').empty();
-                    $('#indexContenido').empty().append(alumnoView.getEmptyList());
+            $('#lnkAlumno').unbind('click');
+            $('#lnkAlumno').click(function() {
+                var alumno = objeto('alumno', '<%=request.getContextPath()%>');
+                var alumnoView = vista(alumno, '<%=request.getContextPath()%>');
 
-                    var alumnoControl = control_alumno_list('<%=request.getContextPath()%>');
-                    alumnoControl.inicia(alumnoView, 1, null, null, 10, null, null, null, null);
-                    return false;
-                });
-             
-                $('#lnkProfesor').unbind('click');
-                $('#lnkProfesor').click(function() {
-                    var profesor = objeto('profesor', '<%=request.getContextPath()%>');
-                    var profesorView = vista(profesor, '<%=request.getContextPath()%>');
+                $('#indexContenidoJsp').empty();
+                $('#indexContenido').empty().append(alumnoView.getEmptyList());
 
-                    $('#indexContenidoJsp').empty();
-                    $('#indexContenido').empty().append(profesorView.getEmptyList());
+                var alumnoControl = control_alumno_list('<%=request.getContextPath()%>');
+                alumnoControl.inicia(alumnoView, 1, null, null, 10, null, null, null, null);
+                return false;
+            });
 
-                    var profesorControl = control_profesor_list('<%=request.getContextPath()%>');
-                    profesorControl.inicia(profesorView, 1, null, null, 10, null, null, null, null);
-                    return false;
-                });
-             
+            $('#lnkProfesor').unbind('click');
+            $('#lnkProfesor').click(function() {
+                var profesor = objeto('profesor', '<%=request.getContextPath()%>');
+                var profesorView = vista(profesor, '<%=request.getContextPath()%>');
 
-                $('#lnkRequerimiento').unbind('click');
-                $('#lnkRequerimiento').click(function() {
-                    var requerimiento = objeto('requerimiento', '<%=request.getContextPath()%>');
-                    var requerimientoView = vista(requerimiento, '<%=request.getContextPath()%>');
+                $('#indexContenidoJsp').empty();
+                $('#indexContenido').empty().append(profesorView.getEmptyList());
 
-                    $('#indexContenidoJsp').empty();
-                    $('#indexContenido').empty().append(requerimientoView.getEmptyList());
+                var profesorControl = control_profesor_list('<%=request.getContextPath()%>');
+                profesorControl.inicia(profesorView, 1, null, null, 10, null, null, null, null);
+                return false;
+            });
 
-                    var requerimientoControl = control_requerimiento_list('<%=request.getContextPath()%>');
-                    requerimientoControl.inicia(requerimientoView, 1, null, null, 10, null, null, null, null);
-                    return false;
-                });
- 
 
-             
+            $('#lnkRequerimiento').unbind('click');
+            $('#lnkRequerimiento').click(function() {
+                var requerimiento = objeto('requerimiento', '<%=request.getContextPath()%>');
+                var requerimientoView = vista(requerimiento, '<%=request.getContextPath()%>');
+
+                $('#indexContenidoJsp').empty();
+                $('#indexContenido').empty().append(requerimientoView.getEmptyList());
+
+                var requerimientoControl = control_requerimiento_list('<%=request.getContextPath()%>');
+                requerimientoControl.inicia(requerimientoView, 1, null, null, 10, null, null, null, null);
+                return false;
+            });
+
+
+
 
         </script>
     </body>

@@ -1,3 +1,10 @@
+<%@page import="net.daw.bean.UsuarioBean"%>
+<% UsuarioBean oUsuario = (UsuarioBean) request.getSession().getAttribute("usuarioBean");%>
+<script src="./js/vendor/Box2dWeb-2.1.a.3.min.js"></script>
+<script src="./js/vendor/Box2dWeb-2.1.a.3.js"></script>
+
+
+<% if (oUsuario == null) {%>
 <div class="hero-unit">
     <h1>Bienvenidos a ajax yield 2014</h1>
     <h3>Versión (v.01) de 17/1/2014</h3>
@@ -72,3 +79,20 @@
         TAMARIT MARTÍNEZ, SALVADOR 
     </div>
 </div>
+<% } else {%>
+
+
+
+<div class="hero-unit" style='margin:0px'>
+   <div class="ball">
+    <div>
+      <b></b>
+      <b></b>
+      <b></b>
+    </div>
+  </div><br>
+  <div class="crate"></div><br>
+  <div class="crate"></div><div class="crate"></div><br>
+  <div class="ground"></div>
+</div>
+<% }%>
