@@ -95,35 +95,34 @@
         <!--------------------------------------->
 
         <!--Bootstrap-->
-
         <script src="js/vendor/bootstrap.min.js"></script>   
         <!--------------------------------------->
 
-
+        <!--Archivos Locales-->
         <script src="js/util.js" charset="UTF-8"></script>
         <script src="js/main.js" charset="UTF-8"></script>
-
         <script src="js/control/alumno.js" charset="UTF-8"></script>
         <script src="js/control/usuario.js" charset="UTF-8"></script>
         <script src="js/control/requerimiento.js" charset="UTF-8"></script>
         <script src="js/control/profesor.js" charset="UTF-8"></script>
-
-
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <!--------------------------------------->
+
+        <!--Videojuego-->
         <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
         <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
         <script src="./js/vendor/jquery.validate.min.js"></script>
-        <!-- <script src="./js/vendor/Box2dWeb-2.1.a.3.min.js"></script>
-         <script src="./js/vendor/Box2dWeb-2.1.a.3.js"></script>-->
+        <script src="./js/vendor/Box2dWeb-2.1.a.3.min.js"></script>
+        <script src="./js/vendor/Box2dWeb-2.1.a.3.js"></script>
         <script src="http://box2dweb.googlecode.com/svn/trunk/Box2D.js"></script>
         <script src="https://rawgithub.com/paulirish/1579671/raw/rAF.js"></script>
         <script src="https://rawgithub.com/abernier/3225993/raw/loop.js"></script>
         <script src="http://code.jquery.com/jquery-latest.js"></script>
         <script src="./js/videogame.js"></script>
-
+        <!--------------------------------------->
+        
+        
         <script>
-
-
             $('#lnkAlumno').unbind('click');
             $('#lnkAlumno').click(function() {
                 var alumno = objeto('alumno', '<%=request.getContextPath()%>');
@@ -163,10 +162,6 @@
                 requerimientoControl.inicia(requerimientoView, 1, null, null, 10, null, null, null, null);
                 return false;
             });
-
-
-
-
         </script>
     </body>
 </html>

@@ -82,8 +82,7 @@
 <% } else {%>
 
 
-
-<div class="hero-unit" style='margin:0px'>
+<div class="hero-unit" style='margin:0px' width='650' height='500'>
    <div class="ball">
     <div>
       <b></b>
