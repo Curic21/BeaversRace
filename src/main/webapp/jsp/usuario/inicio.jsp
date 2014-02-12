@@ -3,6 +3,12 @@
 
 
 <% if (oUsuario == null) {%>
+<!-- LOGO -->
+<div id="top" class="header visible-lg" align='center'>
+    <div class="vert-text"><h1><img src="img/logo.png" id="logo" /></h1></div>
+</div>
+
+<!-- /LOGO -->
 <div class="hero-unit">
     <h1>Bienvenidos a ajax yield 2014</h1>
     <h3>Versión (v.01) de 17/1/2014</h3>
@@ -82,15 +88,15 @@
 
 
 <div class="hero-unit" style='margin:0px' width='650' height='500'>
-   <div class="ball">
-    <div>
-      <b></b>
-      <b></b>
-      <b></b>
-    </div>
-  </div><br>
-  <div class="crate"></div><br>
-  <div class="crate"></div><div class="crate"></div><br>
-  <div class="ground"></div>
+    <div class="ball">
+        <div>
+            <b></b>
+            <b></b>
+            <b></b>
+        </div>
+    </div><br>
+    <div class="crate"></div><br>
+    <div class="crate"></div><div class="crate"></div><br>
+    <div class="ground"></div>
 </div>
 <% }%>

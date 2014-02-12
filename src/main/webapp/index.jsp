@@ -70,12 +70,6 @@
                     }
                 %>
                 <div id="indexContenidoJsp">
-                    <!-- LOGO -->
-                    <div id="top" class="header visible-lg" align='center'>
-                        <div class="vert-text"><h1><img src="img/logo.png" id="logo" /></h1></div>
-                    </div>
-
-                    <!-- /LOGO -->
                     <jsp:include page='<%=(String) request.getAttribute("contenido")%>' />                
                 </div>
                 <%
