@@ -1,7 +1,5 @@
 <%@page import="net.daw.bean.UsuarioBean"%>
 <% UsuarioBean oUsuario = (UsuarioBean) request.getSession().getAttribute("usuarioBean");%>
-<script src="./js/vendor/Box2dWeb-2.1.a.3.min.js"></script>
-<script src="./js/vendor/Box2dWeb-2.1.a.3.js"></script>
 
 
 <% if (oUsuario == null) {%>
@@ -80,6 +78,7 @@
     </div>
 </div>
 <% } else {%>
+
 
 
 <div class="hero-unit" style='margin:0px' width='650' height='500'>
