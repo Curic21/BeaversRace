@@ -88,6 +88,6 @@
 
 
 
-<canvas id="canvasDebug" style="background-color: #ffffff" width='850' height='600'></canvas>
+<canvas id="canvasDebug" width='850' height='550'></canvas>
 
 <% }%>

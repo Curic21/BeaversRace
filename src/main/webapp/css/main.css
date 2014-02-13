@@ -127,3 +127,7 @@ label.error {
     padding: 2px 8px;
     margin-top: 2px;
 }
+
+#canvasDebug{
+background-image: url("../img/forest.png");
+}

@@ -81,10 +81,12 @@ setInterval(function(){
 
 
 canvasDebug.addEventListener('click',function(){
+    for(i=0;i<20;i++){
 	var ballDef = new b2BodyDef;
 	ballDef.type = b2Body.b2_dynamicBody;
 	ballDef.position.Set(_cw*0.5/30, _ch*0.2/30);
 
+/*Creando la pelota*/
 
 	var fixture = new b2FixtureDef;
 	fixture.density = 10;
@@ -101,6 +103,7 @@ canvasDebug.addEventListener('click',function(){
 
 	ball.SetLinearVelocity(new b2Vec2(randVelocity,0)) // Establecemos la velocidad con la que saldrÃ¡ la bola
 	balls.push(ball);
+    }
 });
  
 }(jQuery, Box2D));

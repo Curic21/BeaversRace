@@ -15,8 +15,8 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/videogame.css">
-        <style>
+       <!-- <link rel="stylesheet" href="css/videogame.css">-->
+        <link rel="stylesheet" href="css/videogame.css"><style>
             body {
                 padding-top: 60px;
                 padding-bottom: 40px;
