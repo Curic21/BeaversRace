@@ -87,16 +87,7 @@
 
 
 
-<div class="hero-unit" style='margin:0px' width='650' height='500'>
-    <div class="ball">
-        <div>
-            <b></b>
-            <b></b>
-            <b></b>
-        </div>
-    </div><br>
-    <div class="crate"></div><br>
-    <div class="crate"></div><div class="crate"></div><br>
-    <div class="ground"></div>
-</div>
+
+<canvas id="canvasDebug" style="background-color: #ffffff" width='850' height='600'></canvas>
+
 <% }%>

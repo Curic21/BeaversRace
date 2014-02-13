@@ -1,221 +1,106 @@
 (function () {
- 
-// Flatten Box2d (ugly but handy!)
-(function b2(o) {
-  for (k in o) {
-    if (o.hasOwnProperty(k)) {
-      if ($.isPlainObject(o[k])) {
-        b2(o[k]);
-      } else if (/^b2/.test(k)) {
-        window[k] = o[k];
-      }
-    }
-  }
-}(Box2D));
- 
-var world = new b2World(
-  new b2Vec2(0, 9.81), // gravity
-  true                 // allow sleep
-);
-var SCALE = 30;
- 
-//
-// Ground
-//
- 
-(function ($ground) {
-  // Fixture
-  var fixDef = new b2FixtureDef;
-  fixDef.density = 1;
-  fixDef.friction = 0.5;
-  fixDef.restitution = 0.2;
- 
-  // Shape
-  fixDef.shape = new b2PolygonShape;
-  fixDef.shape.SetAsBox(
-    $ground.outerWidth() / 2 / SCALE, //half width
-    $ground.outerHeight() / 2 / SCALE  //half height
-  );
- 
-  // Body
-  var bodyDef = new b2BodyDef;
-  bodyDef.type = b2Body.b2_staticBody;
-  bodyDef.position.x = ($ground.offset().left + $ground.outerWidth() / 2) / SCALE;
-  bodyDef.position.y = ($ground.offset().top + $ground.outerHeight() / 2) / SCALE;
-  var body = world.CreateBody(bodyDef);
-  body.CreateFixture(fixDef);
-  $ground.data('body', body);
-}($('.ground')));
- 
-//
-// Crates
-//
- 
-$('.crate').each(function (i, el) {
-  var $crate = $(el);
- 
-  // Fixture
-  var fixDef = new b2FixtureDef;
-  fixDef.density = 1;
-  fixDef.friction = 0.5;
-  fixDef.restitution = 0.2;
- 
-  // Shape
-  fixDef.shape = new b2PolygonShape;
-  fixDef.shape.SetAsBox(
-    $crate.outerWidth() / 2 / SCALE, //half width
-    $crate.outerHeight() / 2 / SCALE  //half height
-  );
- 
-  // Body
-  var bodyDef = new b2BodyDef;
-  bodyDef.type = b2Body.b2_dynamicBody;
-  bodyDef.position.x = ($crate.offset().left + $crate.outerWidth() / 2) / SCALE;
-  bodyDef.position.y = ($crate.offset().top + $crate.outerHeight() / 2) / SCALE;
- 
-  var body = world.CreateBody(bodyDef);
-  body.CreateFixture(fixDef);
-  $crate.data('body', body);
+
+var world,
+	walls = [],
+	balls = [],
+	canvasDebug = document.getElementById('canvasDebug');
+
+// Metodos de Box2D
+
+var	b2Vec2 = Box2D.Common.Math.b2Vec2,
+	b2BodyDef = Box2D.Dynamics.b2BodyDef,
+	b2Body = Box2D.Dynamics.b2Body,
+	b2FixtureDef = Box2D.Dynamics.b2FixtureDef,
+	b2World = Box2D.Dynamics.b2World,
+	b2PolygonShape = Box2D.Collision.Shapes.b2PolygonShape,
+	b2CircleShape = Box2D.Collision.Shapes.b2CircleShape,
+	b2DebugDraw = Box2D.Dynamics.b2DebugDraw;
+
+
+world = new b2World(new b2Vec2(0,20), true);
+
+// Tamaño del canvas
+_cw=canvasDebug.width,
+_ch=canvasDebug.height;
+
+// Dimensiones del Escenario
+
+var wallsDimensions =[
+	{x:_cw/2,	y:  0,		w:_cw/2,	h:  1},	// Superior
+	{x:_cw/2,	y:_ch,		w:_cw/2,	h:  1},	// Inferior
+	{x:  0,		y:_ch/2,	w:  1,		h:_ch},	// Izquierda
+	{x:_cw,		y:_ch/2,	w:  1,		h:_ch},	// Derecha
+	{x:_cw/2,	y:300,		w:200,		h: 10}	// plataforma
+];
+
+
+
+// Creando Escenario(from wallsDimensions)
+
+for(var i=0;i<wallsDimensions.length;i++){
+
+	var wallDef = new b2BodyDef;	// Creamos un cuerpo o elemento nuevo
+	wallDef.type = b2Body.b2_staticBody;	// Establecemos que sea estÃ¡tico
+	wallDef.position.Set(wallsDimensions[i].x/30, wallsDimensions[i].y/30);	// Establecemos su posiciÃ³n (1m=30px)
+
+	var fixture = new b2FixtureDef;	// Creamos una configuraciÃ³n de cuerpo nueva
+	fixture.density = 10;		// Density determina el peso (irrelevante en este caso)
+	fixture.friction = 0.5;		// Friction determina el roce con el resto de elementos
+	fixture.restitution = 0.9;	// Capacidad de rebote (tambiÃ©n determina el de los elementos que rebotan en el)
+
+	fixture.shape = new b2PolygonShape;	// Establecemos que serÃ¡ un polÃ­gono
+	fixture.shape.SetAsBox(wallsDimensions[i].w/30, wallsDimensions[i].h/30); // Estableceos sus dimensiones (1m=30px)
+
+	var wall = world.CreateBody(wallDef);	// AÃ±adimos al "mundo" el muro
+	wall.CreateFixture(fixture);			// Establecemos la configuraciÃ³n del mundo
+
+	walls.push(wall);	// AÃ±adimos el muro a un Array que contiene los muros (para posteriormente disponer del elemento)
+}
+
+// Drawing Canvas
+
+var debugDraw = new b2DebugDraw();	// Objeto de visualizaciÃ³n de depuraciÃ³n
+debugDraw.SetSprite(canvasDebug.getContext("2d"));	// Establecemos el canvas para visualizarlo
+debugDraw.SetDrawScale(30);		// Escala de la visualizaciÃ³n
+debugDraw.SetFillAlpha(0.3);	// Transparencia de los elementos (debug)
+debugDraw.SetLineThickness(1.0);
+debugDraw.SetFlags(b2DebugDraw.e_shapeBit | b2DebugDraw.e_jointBit);
+
+world.SetDebugDraw(debugDraw);	// Le proporcionamos al "mundo" la salida del debug
+
+
+
+var FPS = 60;	// Establecemos la tasa de refresco por segundo
+
+setInterval(function(){
+	world.Step(1 / FPS, 10, 10);	// Avanzamos la escena
+	world.DrawDebugData();
+	world.ClearForces();
+},1000/FPS);
+
+
+
+canvasDebug.addEventListener('click',function(){
+	var ballDef = new b2BodyDef;
+	ballDef.type = b2Body.b2_dynamicBody;
+	ballDef.position.Set(_cw*0.5/30, _ch*0.2/30);
+
+
+	var fixture = new b2FixtureDef;
+	fixture.density = 10;
+	fixture.friction = 0.5;
+	fixture.restitution = 0.8;
+	fixture.shape =  new b2CircleShape(10/30); // Establecemos el radio (1m=30px)
+
+	var ball = world.CreateBody(ballDef)
+	ball.CreateFixture(fixture);
+
+	// Generamos una velocidad aleatoria
+	var velocityFactor = 10,
+		randVelocity = Math.round(Math.random()*velocityFactor*2)-velocityFactor;
+
+	ball.SetLinearVelocity(new b2Vec2(randVelocity,0)) // Establecemos la velocidad con la que saldrÃ¡ la bola
+	balls.push(ball);
 });
- 
-//
-// Ball
-//
- 
-(function ($ball) {
-    // Fixture
-  var fixDef = new b2FixtureDef;
-  fixDef.density = 1;
-  fixDef.friction = 0.5;
-  fixDef.restitution = 0.2;
- 
-  // Shape
-  fixDef.shape = new b2CircleShape($ball.outerWidth() / 2 / SCALE);
- 
-  // Body
-  var bodyDef = new b2BodyDef;
-  bodyDef.type = b2Body.b2_dynamicBody;
-  bodyDef.position.x = ($ball.offset().left + $ball.outerWidth() / 2) / SCALE;
-  bodyDef.position.y = ($ball.offset().top + $ball.outerHeight() / 2) / SCALE;
- 
-  var body = world.CreateBody(bodyDef);
-  body.CreateFixture(fixDef);
-  $ball.data('body', body);
-}($('.ball')));
- 
-//
-// MouseJoint
-//
- 
-var mouse = new b2Vec2();
-$(window).mousemove(function (e) {
-  mouse.Set(e.pageX / SCALE, e.pageY / SCALE);
-});
-window.mouse = mouse;
- 
-(function (mouse) {
-  var mouseJointDef = new b2MouseJointDef();
-  mouseJointDef.target = mouse;
-  mouseJointDef.bodyA = world.GetGroundBody();
-  mouseJointDef.collideConnected = true;
- 
-  var mouseJoint;
-  $('*').on({
-    mousedown: function (e) {
-      var body = $(this).data('body');
- 
-      if (!body) {
-        return;
-      }
- 
-      mouseJointDef.bodyB = body;
-      mouseJointDef.maxForce = 3000 * body.GetMass();
- 
-      mouseJoint = world.CreateJoint(mouseJointDef);
-      mouseJoint.SetTarget(mouse);
- 
-      function mouseup(e) {
-        world.DestroyJoint(mouseJoint);
-      }
- 
-      $(window).one('mouseup', mouseup);
-    }
-  });
-}(mouse));
- 
-//
-// Loops
-//
- 
-(function () {
-  var dt = 30;
-  new Loop(function () {
-    world.Step(
-      1/dt, //frame-rate
-      10,   //velocity iterations
-      10    //position iterations
-    );
- 
-    world.ClearForces();
- 
-  }, 1000/dt).start();
-}());
- 
-(function () {
-  var $entities = $('.ball, .crate');
- 
-  // cache some initial coordinates informations
-  $entities.each(function (i, el) {
-    var $el = $(el);
-    $el.data('origPos', {
-      left: $el.offset().left,
-      top: $el.offset().top,
-      width: $el.outerWidth(),
-      height: $el.outerHeight()
-    });
-  });
- 
-  $ball = $('.ball');
-  $tails = $('b', $ball);
- 
-  new Loop(function (t, t0) {
-    if (!t0) {
-      return;
-    }
-    var dt = t - t0;
-    if (dt <= 0) {
-      return;
-    }
- 
-    var i = $entities.length
-    while (i--) {(function () {
-      var entity = $entities[i];
-      var $entity = $(entity);
- 
-      var body = $entity.data('body');
-      var pos = body.GetPosition();
-      var ang = body.GetAngle() * 180 / Math.PI;
-      var origPos = $entity.data('origPos')
- 
-      $entity.css('transform', 'translate3d(' + ~~(pos.x*SCALE - origPos.left  - origPos.width / 2) + 'px, ' + ~~(pos.y*SCALE - origPos.top - origPos.height / 2) + 'px, 0) rotate3d(0,0,1,' + ~~ang + 'deg)');
-    }());}
- 
- 
-    function angleVV(v1, v2) {
-      var n1 = v1.Length();
-      var n2 = v2.Length();
- 
-      return Math.atan2(v1.y/n1, v1.x/n1) - Math.atan2(v2.y/n2, v2.x/n2);
-    }
-    var vel = $ball.data('body').GetLinearVelocityFromLocalPoint(new b2Vec2(0,0));
-    $tails
-      .parent().css('transform', 'rotate3d(0,0,1,' + ~~((-$ball.data('body').GetAngle() + angleVV(vel, new b2Vec2(0, 1)) - Math.PI / 2) * 180 / Math.PI) + 'deg)').end()
-      .css({
-        width: vel.Length() * 10 + '%',
-        opacity: vel.Length() / 10
-      });
- 
-  }).start();
-}());
  
 }(jQuery, Box2D));
