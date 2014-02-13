@@ -108,10 +108,6 @@
         <script src="./js/vendor/jquery.validate.min.js"></script>
         <script src="./js/vendor/Box2dWeb-2.1.a.3.min.js"></script>
         <script src="./js/vendor/Box2dWeb-2.1.a.3.js"></script>
-        <script src="http://box2dweb.googlecode.com/svn/trunk/Box2D.js"></script>
-        <script src="https://rawgithub.com/paulirish/1579671/raw/rAF.js"></script>
-        <script src="https://rawgithub.com/abernier/3225993/raw/loop.js"></script>
-        <script src="http://code.jquery.com/jquery-latest.js"></script>
         <script src="./js/videogame.js"></script>
         <!--------------------------------------->
         
