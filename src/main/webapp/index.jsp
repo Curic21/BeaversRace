@@ -108,6 +108,7 @@
         <script src="./js/vendor/jquery.validate.min.js"></script>
         <script src="./js/vendor/Box2dWeb-2.1.a.3.min.js"></script>
         <script src="./js/vendor/Box2dWeb-2.1.a.3.js"></script>
+         <script src="./js/framework.js"></script>
         <script src="./js/videogame.js"></script>
         <!--------------------------------------->
         

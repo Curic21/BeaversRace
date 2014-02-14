@@ -63,3 +63,7 @@ body {font-size:250%; text-align:center; margin:0; padding-top:1em;}
 	.dg {display:none;}
 	.ground {width:4em;}
 }
+
+#canvas{
+background-image: url("../img/forest.png");
+}
