@@ -148,6 +148,8 @@ $(function()
     //Get the canvas and the context
     canvas = $('#canvas');
     ctx = canvas[0].getContext('2d');
+
+    
     //get canvas size
     canvas_width = canvas_width = parseInt(canvas.width());
     canvas_height = canvas_height = parseInt(canvas.height());
@@ -187,6 +189,13 @@ function game_loop()
     world.Step(time_step, 8, 3);
     //Clear the forces , Box2d 
     world.ClearForces();
+    
+    //CONTEXTO
+
+    // Fondo
+    ctx.fillStyle = '#ffffff';	// Fondo blanco
+    ctx.fillRect(0, 0, _cw, _ch);	// Rectángulo con el ancho y el alto del Canvas
+
 
     //redraw the world
     redraw_world(world, ctx);
@@ -233,25 +242,34 @@ function createWorld()
 //NIVELES
 
 function Level1() {
-    //Crear plataformas 
-    createBox(world, 1, screen_height, 8, 0.44, {
+    //Crear Bordes del juego (lugar, x, y, anchura, altura)
+
+    //superior e inferior
+
+    createBox(world, 0, 0, 9, 0, {
         'type': b2Body.b2_staticBody, 'restitution': 0.5});
 
-    createBox(world, 1, 2, 3, 0.1, {
+    createBox(world, 0, 5.5, 9, 0, {
         'type': b2Body.b2_staticBody, 'restitution': 0.5});
 
-    createBox(world, 0, 2, .1, 3, {
+//lateral izquierdo y derecho
+
+    createBox(world, 0, 0, 0, 9, {
         'type': b2Body.b2_staticBody, 'restitution': 0.5});
-    createBox(world, screen_width - .1, 2, .1, 3, {
+
+    createBox(world, 8.5, 0, 0, 9, {
         'type': b2Body.b2_staticBody, 'restitution': 0.5});
+
+
+//Crear plataformas
+    createBox(world, 0, 5.2, 9, .1, {
+        'type': b2Body.b2_staticBody, 'restitution': 0.5});
+
+
 
     //create the letters properties
     var letters = {'restitution': .3, 'linearDamping': 1.0, 'angularDamping': 1.0, 'density': 2};
-    var cube = {'restitution': .3, 'linearDamping': 1.0, 'angularDamping': 1.0, 'density': 0.5};
-    //L
-    createBox(world, 1.93, 1.4, 0.3, 0.1, letters);
-    createBox(world, 1.5, 1, 0.1, 0.5, letters);
-
+    var cube = {'restitution': .3, 'linearDamping': 1.0, 'angularDamping': 1.0, 'density': 0.1};
 
     var vertD = [];
     vertD[0] = new b2Vec2(0, 0);
@@ -264,34 +282,40 @@ function Level1() {
 
     createPol(world, 2.3, .3, letters, vertD);
 
-
-    createBox(world, 3.0, .5, .3, 0.1, letters);
-    createBox(world, 2.95, .8, .12, 0.1, letters);
-    createBox(world, 3.15, 1, .3, 0.1, letters);
-
-
-    createBox(world, 3.2, 1.3, .12, 0.1, letters);
-    createBox(world, 3.03, 1.5, .3, 0.1, letters);
-
+    /* createBox(world, 1.93, 1.4, 0.3, 0.1, letters);
+     createBox(world, 1.5, 1, 0.1, 0.5, letters);
+     createBox(world, 3.0, .5, .3, 0.1, letters);
+     createBox(world, 2.95, .8, .12, 0.1, letters);
+     createBox(world, 3.15, 1, .3, 0.1, letters);
+     
+     
+     createBox(world, 3.2, 1.3, .12, 0.1, letters);
+     createBox(world, 3.03, 1.5, .3, 0.1, letters);
+     */
     player = createBox(world, 1, 3, .1, .1, cube);
 
 
 }
 
 
-
+//MOVIMIENTO JUGADOR
 
 function MovePlayer(e)
 {
     var force;
     switch (e.keyCode)
     {
+        //Izquierda
         case 39:
             force = new b2Vec2(.5, 0);
             break;
+
+            //Derecha    
         case 37:
             force = new b2Vec2(-.5, 0);
             break;
+
+            //Arriba
         case 38:
             force = new b2Vec2(0, -.5);
             break;
