@@ -148,8 +148,6 @@ $(function()
     //Get the canvas and the context
     canvas = $('#canvas');
     ctx = canvas[0].getContext('2d');
-
-    
     //get canvas size
     canvas_width = canvas_width = parseInt(canvas.width());
     canvas_height = canvas_height = parseInt(canvas.height());
@@ -190,13 +188,6 @@ function game_loop()
     //Clear the forces , Box2d 
     world.ClearForces();
     
-    //CONTEXTO
-
-    // Fondo
-    ctx.fillStyle = '#ffffff';	// Fondo blanco
-    ctx.fillRect(0, 0, _cw, _ch);	// Rectángulo con el ancho y el alto del Canvas
-
-
     //redraw the world
     redraw_world(world, ctx);
 
