@@ -85,9 +85,8 @@
 </div>
 <% } else {%>
 
-
-
-
-<canvas id="canvas" width='850' height='550'></canvas>
+<div id="c2canvasdiv">
+    <canvas id="c2canvas" width="640" height="480"></canvas>
+</div>
 
 <% }%>
