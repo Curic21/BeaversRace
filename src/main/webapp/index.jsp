@@ -15,7 +15,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" href="css/bootstrap.min.css">
-       <!-- <link rel="stylesheet" href="css/videogame.css">-->
+        <!-- <link rel="stylesheet" href="css/videogame.css">-->
         <link rel="stylesheet" href="css/videogame.css"><style>
             body {
                 padding-top: 60px;
@@ -108,12 +108,141 @@
         <script src="./js/vendor/jquery.validate.min.js"></script>
         <script src="./js/vendor/Box2dWeb-2.1.a.3.min.js"></script>
         <script src="./js/vendor/Box2dWeb-2.1.a.3.js"></script>
-         <script src="./js/framework.js"></script>
-        <script src="./js/c2runtime.js"></script>
+        <script src="./js/framework.js"></script>
+        <script src="./js/videogame.js"></script>
+        <script src="jquery.mousewheel.js"></script>
         <!--------------------------------------->
-        
-        
+
+
+
+        <script type="text/javascript">
+            var x = 1;
+            var y = 1;
+            var obstaculos = new Array(10);
+
+            for (i = 1; i < 11; i++) {
+
+                obstaculos[i] = new Array(10);
+
+            }
+
+
+            obstaculos[2][9] = 1;
+            obstaculos[5][9] = 1;
+            obstaculos[6][9] = 1;
+            obstaculos[7][9] = 1;
+            obstaculos[8][7] = 1;
+            obstaculos[9][7] = 1;
+            obstaculos[8][9] = 1;
+            obstaculos[9][9] = 1;
+            obstaculos[6][8] = 1;
+
+
+            $(document).ready(function() {
+
+                $("body").keypress(function(e) {
+
+
+                    switch (e.which) {
+
+                        case 100: //pulsamos 'D'
+
+                            if (x < 10) {
+                                //alert(obstaculos[x+1][y]);
+                                if (obstaculos[x + 1][y] != 1) {
+                                    $('#pac').animate({"left": "+=1em"}, 500);
+                                    $('#cerrado').animate({opacity: 1}, 200, function() {
+                                        $('#izquierda').css("opacity", "0");
+                                        $('#arriba').css("opacity", "0");
+                                        $('#abajo').css("opacity", "0");
+                                        $('#derecha').css("opacity", "1");
+                                        $('#cerrado').animate({opacity: 0}, 200);
+                                    });
+                                    x += 1;
+                                    $('#equis').val(x);
+                                }
+                            }
+                            break;
+
+                        case 97: //pulsamos 'A'
+
+                            if (x > 1) {
+                                if (obstaculos[x - 1][y] != 1) {
+
+                                    $('#pac').animate({"left": "-=1em"}, 500);
+                                    $('#cerrado').animate({opacity: 1}, 200, function() {
+                                        $('#derecha').css("opacity", "0");
+                                        $('#arriba').css("opacity", "0");
+                                        $('#abajo').css("opacity", "0");
+                                        $('#izquierda').css("opacity", "1");
+                                        $('#cerrado').animate({opacity: 0}, 200);
+                                    });
+                                    x -= 1;
+                                    $('#equis').val(x);
+                                }
+                            }
+
+                            break;
+
+                        case 115: //pulsamos 'S'
+
+                            if (y < 10) {
+                                if (obstaculos[x][y + 1] != 1) {
+                                    $('#pac').animate({"top": "+=1em"}, 500);
+                                    $('#cerrado').animate({opacity: 1}, 200, function() {
+                                        $('#izquierda').css("opacity", "0");
+                                        $('#arriba').css("opacity", "0");
+                                        $('#derecha').css("opacity", "0");
+                                        $('#abajo').css("opacity", "1");
+                                        $('#cerrado').animate({opacity: 0}, 200);
+                                    });
+                                    y += 1;
+                                    $('#ygriega').val(y);
+                                }
+                            }
+
+                            break;
+
+                        case 119: //pulsamos 'W'
+
+                            if (y > 1) {
+                                if (obstaculos[x][y - 1] != 1) {
+                                    $('#pac').animate({"top": "-=1em"}, 500);
+                                    $('#cerrado').animate({opacity: 1}, 200, function() {
+                                        $('#izquierda').css("opacity", "0");
+                                        $('#derecha').css("opacity", "0");
+                                        $('#abajo').css("opacity", "0");
+                                        $('#arriba').css("opacity", "1");
+                                        $('#cerrado').animate({opacity: 0}, 200);
+                                    });
+                                    y -= 1;
+                                    $('#ygriega').val(y);
+                                }
+                            }
+
+                    }
+                });
+
+            });
+
+
+        </script>	
         <script>
+
+            $('#lnkGame').unbind('click');
+            $('#lnkGame').click(function() {
+                var game = objeto('game', '<%=request.getContextPath()%>');
+                var gameView = vista(game, '<%=request.getContextPath()%>');
+
+                $('#indexContenidoJsp').empty();
+                $('#indexContenido').empty().append(gameView.getEmptyList());
+
+                var gameControl = control_game_list('<%=request.getContextPath()%>');
+                gameControl.inicia(gameView, 1, null, null, 10, null, null, null, null);
+                return false;
+            });
+
+
             $('#lnkAlumno').unbind('click');
             $('#lnkAlumno').click(function() {
                 var alumno = objeto('alumno', '<%=request.getContextPath()%>');

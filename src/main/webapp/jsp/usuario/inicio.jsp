@@ -1,8 +1,5 @@
-<%@page import="net.daw.bean.UsuarioBean"%>
-<% UsuarioBean oUsuario = (UsuarioBean) request.getSession().getAttribute("usuarioBean");%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 
-
-<% if (oUsuario == null) {%>
 <!-- LOGO -->
 <div id="top" class="header visible-lg" align='center'>
     <div class="vert-text"><h1><img src="img/logo.png" id="logo" /></h1></div>
@@ -11,46 +8,46 @@
 <!-- /LOGO -->
 <div class="hero-unit">
     <h1>Bienvenidos a ajax yield 2014</h1>
-    <h3>VersiÛn (v.01) de 17/1/2014</h3>
-    <h5>Desarrollo de aplicaciones web. CPIFP Ausi‡s March. Curso 2013-2014.</h5>    
+    <h3>Versi√≥n (v.01) de 17/1/2014</h3>
+    <h5>Desarrollo de aplicaciones web. CPIFP Ausi√†s March. Curso 2013-2014.</h5>    
 </div>
 <div class="row-fluid">
     <div class="span8">
         <div class="row-fluid">
             <div class="span6">
-                <h3>øQuÈ es ajax stock?</h3>
-                <p>Es una aplicaciÛn did·ctica para aprender a organizar y desarrollar 
+                <h3>¬øQu√© es ajax stock?</h3>
+                <p>Es una aplicaci√≥n did√°ctica para aprender a organizar y desarrollar 
                     aplicaciones AJAX. Se trata de un proyecto que  
-                    construimos durante la segunda evaluaciÛn de los mÛdulos DES-DEC 
-                    del ciclo formativo DAW. Est· pensado para soportar mantenimientos 
+                    construimos durante la segunda evaluaci√≥n de los m√≥dulos DES-DEC 
+                    del ciclo formativo DAW. Est√° pensado para soportar mantenimientos 
                     CRUDL (create remove update delete list).</p>
             </div>
             <div class="span6">
-                <h3>øPara quÈ sirve?</h3>
-                <p>Se trata de una aplicaciÛn de car·cter did·ctico. 
+                <h3>¬øPara qu√© sirve?</h3>
+                <p>Se trata de una aplicaci√≥n de car√°cter did√°ctico. 
                     Se ha estructurado siguiendo un modelo MVC que permita a los alumnos 
-                    conocer un referente para diseÒar en un futuro sus proyectos.                    
+                    conocer un referente para dise√±ar en un futuro sus proyectos.                    
                 </p>
             </div>    
         </div>
         <div class="row-fluid">    
             <div class="span6">
-                <h3>øQuiÈn la ha desarrollado?</h3>
-                <p>La han desarrollado los alumnos de DAW del CPIFP Ausi‡s March de Valencia (Spain).
-                    El profesor del mÛdulo es Rafael Aznar.
+                <h3>¬øQui√©n la ha desarrollado?</h3>
+                <p>La han desarrollado los alumnos de DAW del CPIFP Ausi√†s March de Valencia (Spain).
+                    El profesor del m√≥dulo es Rafael Aznar.
                     Puedes contactar en raznar at ausasmarch dot net.</p>
             </div> 
             <div class="span6">
-                <h3>øQuÈ licencia tiene?</h3>
+                <h3>¬øQu√© licencia tiene?</h3>
                 <p>La he liberado con licencia <a href="http://www.gnu.org/licenses/fdl-1.3.html">GNU Free Documentation License 1.3</a></p>
             </div>
 
         </div>
     </div>
     <div class="span4">
-        <h3>øCu·les son sus caracterÌsticas?</h3>
+        <h3>¬øCu√°les son sus caracter√≠sticas?</h3>
         <ul>
-            <li>Es un desarrollo did·ctico</li>
+            <li>Es un desarrollo did√°ctico</li>
             <li>Estructura de servidor MVC por niveles sin frameworks</li> 
             <li>Servidor escrito en Java (servlets y jsp)</li>  
             <li>Dos controladores, uno para servir jsp y otro para servir json</li>  
@@ -66,27 +63,22 @@
 <div class="row-fluid">
     <div class="span12">
         <h3>Alumnos que han participado en el proyecto</h3>
-        BENITO SORIA, PEDRO JOS… -
+        BENITO SORIA, PEDRO JOS√â -
         BONET CEREZUELA, JAVIER -
-        CREGO TAPIA, ¡LVARO -
+        CREGO TAPIA, √ÅLVARO -
         ESLAVA BARRERA, JORGE -
         GIMENO GILABERT, ENRIQUE -
-        GRANCHA BONORA, JOS… -
-        MARTÕN MOLINA, CRISTINA -
-        MARTÕN T¡RRAGA, SERGIO -
+        GRANCHA BONORA, JOS√â -
+        MART√çN MOLINA, CRISTINA -
+        MART√çN T√ÅRRAGA, SERGIO -
         MEMBRILLAS BELENGUER, EDUARDO -
         NAVARRO PERIS, ANTONIO -
         ORTEGA ORTEGA, DIANA -
-        P…REZ GODESART, JUAN -
-        RODRÕGUEZ SERRA, DANIEL -
-        SEGOVIA LE”N, JACOBO -
-        TAMARIT MARTÕNEZ, SALVADOR 
+        P√âREZ GODESART, JUAN -
+        RODR√çGUEZ SERRA, DANIEL -
+        SEGOVIA LE√ìN, JACOBO -
+        TAMARIT MART√çNEZ, SALVADOR 
     </div>
 </div>
-<% } else {%>
 
-<div id="c2canvasdiv">
-    <canvas id="c2canvas" width="640" height="480"></canvas>
-</div>
-
-<% }%>
+ 
