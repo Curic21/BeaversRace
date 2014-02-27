@@ -1,84 +1,86 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-
+<div>
 <!-- LOGO -->
 <div id="top" class="header visible-lg" align='center'>
     <div class="vert-text"><h1><img src="img/logo.png" id="logo" /></h1></div>
 </div>
-
 <!-- /LOGO -->
-<div class="hero-unit">
-    <h1>Bienvenidos a ajax yield 2014</h1>
-    <h3>Versión (v.01) de 17/1/2014</h3>
-    <h5>Desarrollo de aplicaciones web. CPIFP Ausiàs March. Curso 2013-2014.</h5>    
-</div>
-<div class="row-fluid">
-    <div class="span8">
-        <div class="row-fluid">
-            <div class="span6">
-                <h3>¿Qué es ajax stock?</h3>
-                <p>Es una aplicación didáctica para aprender a organizar y desarrollar 
-                    aplicaciones AJAX. Se trata de un proyecto que  
-                    construimos durante la segunda evaluación de los módulos DES-DEC 
-                    del ciclo formativo DAW. Está pensado para soportar mantenimientos 
-                    CRUDL (create remove update delete list).</p>
-            </div>
-            <div class="span6">
-                <h3>¿Para qué sirve?</h3>
-                <p>Se trata de una aplicación de carácter didáctico. 
-                    Se ha estructurado siguiendo un modelo MVC que permita a los alumnos 
-                    conocer un referente para diseñar en un futuro sus proyectos.                    
+
+<!--TRAILER -->
+<div align="center" class="trailer visible-lg visible-md">
+    <iframe width="700" height="400" 
+            src="//www.youtube.com/embed/WUfDvKVAc5o" frameborder="0" allowfullscreen></iframe>
+</div><br />
+<!-- /TRAILER-->
+
+<!-- history -->
+<div id="history">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center" id="sinopsis1">
+                <h1>Once upon a time...</h1>
+                <p class="lead">In a far far away Kingdom called Helliva, There was a little baby fairy and her name was Ondina. She was the most beautiful princess that the kingdom ever had.<br/>
+                    But one day,  Themira the old witch, wanted to steal her marvelous beauty because of her jealousy. She was getting older and how she wanted to live forever, she had to eat the youngest princess of that time
+                    because it is the only way to be inmortal.<br/> 
+                    However, the plan of Themira fell through thanks to the guardians of the palace and she only had time to eat the little wings of the princess Ondina.<br/>
+                    With that, Themira could live a few years more, so she swore that she would return for eat the rest of the princess and that she will live forever.<br/>
                 </p>
-            </div>    
-        </div>
-        <div class="row-fluid">    
-            <div class="span6">
-                <h3>¿Quién la ha desarrollado?</h3>
-                <p>La han desarrollado los alumnos de DAW del CPIFP Ausiàs March de Valencia (Spain).
-                    El profesor del módulo es Rafael Aznar.
-                    Puedes contactar en raznar at ausasmarch dot net.</p>
-            </div> 
-            <div class="span6">
-                <h3>¿Qué licencia tiene?</h3>
-                <p>La he liberado con licencia <a href="http://www.gnu.org/licenses/fdl-1.3.html">GNU Free Documentation License 1.3</a></p>
             </div>
+        </div>
+    </div>
+</div><br /><br />
+<!-- /history -->
+
+<!-- Videos -->
+<div id="videos">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-lg-offset-3 text-center">
+                <h2>Videos</h2>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <div id="video2" align="center">
+                    <video controls>
+                        <source src="./video/video2.webm" type="video/webm">
+                        <source src="./video/video2.mp4" type="video/mp4">
+                    </video>
+                    <div id="button2" class="col-sm-3 text-center">
+                        <button class="btn btn-lg btn-success">Trailer</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><br /><br />
+<!-- /Videos -->
+
+<!-- Footer -->
+<footer>
+    <div id="contact" class="container text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Contact</h2>
+                <hr>
+                <p id="contact1" class="hidden-xs">Feel free to email me to provide some feedback for the game, such as suggestions for new levels, or just to say hello!</p>
+                <p id="email2" class="visible-xs">jordieslavabarrera@gmail.com</p>
+            </div>
+            <div  id="social" class="col-sm-6 col-sm-offset-3 text-center">
+                <!--
+                <ul class="list-inline">
+                    <li><i class="fa fa-facebook fa-3x"></i>
+                    </li>
+                    <li><i class="fa fa-twitter fa-3x"></i>
+                    </li>
+                    <li><i class="fa fa-dribbble fa-3x"></i>
+                    </li>
+                </ul>-->
+            </div> 
 
         </div>
     </div>
-    <div class="span4">
-        <h3>¿Cuáles son sus características?</h3>
-        <ul>
-            <li>Es un desarrollo didáctico</li>
-            <li>Estructura de servidor MVC por niveles sin frameworks</li> 
-            <li>Servidor escrito en Java (servlets y jsp)</li>  
-            <li>Dos controladores, uno para servir jsp y otro para servir json</li>  
-            <li>Cliente AJAX con Javascript y JQuery</li>              
-            <li>Cliente desarrollado sobre Bootstrap responsivo</li>
-            <li>Acceso a datos (base de datos MySQL) mediante clases de negocio y DAO</li>
-            <li>Mantenimientos paginados</li>
-            <li>Ajax Stock soporta Relaciones 1:M</li>
-            <li>Ajax Stock soporta Relaciones M:M</li>
-        </ul>
-    </div>
+</footer>
+<!-- /Footer -->
 </div>
-<div class="row-fluid">
-    <div class="span12">
-        <h3>Alumnos que han participado en el proyecto</h3>
-        BENITO SORIA, PEDRO JOSÉ -
-        BONET CEREZUELA, JAVIER -
-        CREGO TAPIA, ÁLVARO -
-        ESLAVA BARRERA, JORGE -
-        GIMENO GILABERT, ENRIQUE -
-        GRANCHA BONORA, JOSÉ -
-        MARTÍN MOLINA, CRISTINA -
-        MARTÍN TÁRRAGA, SERGIO -
-        MEMBRILLAS BELENGUER, EDUARDO -
-        NAVARRO PERIS, ANTONIO -
-        ORTEGA ORTEGA, DIANA -
-        PÉREZ GODESART, JUAN -
-        RODRÍGUEZ SERRA, DANIEL -
-        SEGOVIA LEÓN, JACOBO -
-        TAMARIT MARTÍNEZ, SALVADOR 
-    </div>
-</div>
-
- 

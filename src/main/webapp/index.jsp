@@ -15,7 +15,6 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" href="css/bootstrap.min.css">
-        <!-- <link rel="stylesheet" href="css/videogame.css">-->
         <link rel="stylesheet" href="css/videogame.css"><style>
             body {
                 padding-top: 60px;
@@ -73,7 +72,10 @@
                     out.print("</div>");
                 %>    
                 <div class="row-fluid">
-                    <div class="span12"><hr><footer><p>&copy; Rafael Aznar (2013)</p></footer></div>   
+                    <div class="span12">
+                        <hr id="copyright">
+                         &copy; Jordi Eslava 2014
+                    </div>   
                 </div>
             </div>
         </div>                    
@@ -113,7 +115,7 @@
 
 
         <script type="text/javascript">
-            var x = 1;
+           var x = 1;
             var y = 1;
             var obstaculos = new Array(10);
 
@@ -222,8 +224,8 @@
 
             });
 
-
         </script>	
+        
         <script>
 
             $('#lnkGame').unbind('click');

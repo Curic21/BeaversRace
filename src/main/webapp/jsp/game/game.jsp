@@ -119,11 +119,6 @@
     </style>
 
 
-    <div>
-        <p>Coordenada X<input type=text id="equis" value="1" /></p>	
-        <p>Coordenada Y<input type=text id="ygriega" value="1" /></p>			
-    </div> 
-
     <div id="tablero">
         <div id="pac">
             <img id="derecha" src="./img/pac-1.png" />
@@ -168,9 +163,9 @@
     </div>
 
 
-    <div id="c2canvasdiv">
-        <canvas id="c2canvas" width="640" height="480"></canvas>
-    </div>
+   <!-- <div id="canvasdiv">
+        <canvas id="canvas" width="640" height="480"></canvas>
+    </div>-->
 
     <% }%>
 

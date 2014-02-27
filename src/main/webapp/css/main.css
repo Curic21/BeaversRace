@@ -128,3 +128,58 @@ label.error {
     margin-top: 2px;
 }
 
+#history{
+    margin-top: 3em;
+    background-image: url("../img/scroll.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+#sinopsis1 > p{
+
+    color: #330000;
+    font-family:Times New Roman;
+    font-weight: bold;
+    font-style: italic;
+    width: 50%;
+    padding-left: 14em;
+    padding-top: 1em;
+    padding-bottom: 3em;
+}
+
+#sinopsis1>h1{
+    color: #330000;
+    padding-top: 1em;
+    font-family:Times New Roman;
+    text-shadow: 1px 1px  black;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 4vw;
+}
+
+
+.portfolio-item, .img-portfolio {
+    margin: 1em 1em 1em 4em;
+    padding: 3em;
+    width: 350px;
+    height: 250px;
+}
+
+
+.pictures{
+    margin-right: 15vw;
+}
+
+#trailer{
+    margin: 5em 0;
+}
+
+
+video{
+    width: 40em;
+    height:20em; 
+}
+
+#video1{
+    margin-left: 5em;
+}
