@@ -187,7 +187,7 @@ function game_loop()
     world.Step(time_step, 8, 3);
     //Clear the forces , Box2d 
     world.ClearForces();
-    
+
     //redraw the world
     redraw_world(world, ctx);
 
@@ -253,7 +253,13 @@ function Level1() {
 
 
 //Crear plataformas
-    createBox(world, 0, 5.2, 9, .1, {
+    createBox(world, 0, 5.2, 2, .1, {
+        'type': b2Body.b2_staticBody, 'restitution': 0.5});
+
+    createBox(world, 3, 2.2, 1, .1, {
+        'type': b2Body.b2_staticBody, 'restitution': 0.5});
+
+    createBox(world, 7, 3.2, 1, .1, {
         'type': b2Body.b2_staticBody, 'restitution': 0.5});
 
 

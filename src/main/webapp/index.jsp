@@ -104,16 +104,34 @@
         <!--Videojuego-->
         <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
         <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script>
         <script src="./js/vendor/jquery.validate.min.js"></script>
         <script src="./js/vendor/Box2dWeb-2.1.a.3.min.js"></script>
         <script src="./js/vendor/Box2dWeb-2.1.a.3.js"></script>
         <script src="./js/framework.js"></script>
         <script src="./js/videogame.js"></script>
-        <script src="jquery.mousewheel.js"></script>
+        <script type="text/javascript" src="./js/gamequery.js"></script>
+        <script src="./js/tutorial.js"></script>
         <!--------------------------------------->
 
-
-
+                 
+ <!-- Custom JavaScript for Smooth Scrolling -->     
+        <script>
+            $(function() {
+                $('a[href*=#]:not([href=#])').click(function() {
+                    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+                        var target = $(this.hash);
+                        target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                        if (target.length) {
+                            $('html,body').animate({
+                                scrollTop: target.offset().top
+                            }, 1000);
+                            return false;
+                        }
+                    }
+                });
+            });
+        </script>
         <script type="text/javascript">
            var x = 1;
             var y = 1;
