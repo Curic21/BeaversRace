@@ -121,10 +121,7 @@
                     }
                 });
             });
-        </script>
-        
-        
-        <script>
+
 
             $('#lnkGame').unbind('click');
             $('#lnkGame').click(function() {
