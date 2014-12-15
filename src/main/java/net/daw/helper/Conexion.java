@@ -22,22 +22,22 @@ public class Conexion {
     }
 
     public static String getDatabaseName() {
-        return "ausiasyield";
+        return "beaversrace";
     }
 
     public static String getDatabaseLogin() {
-        return "root";
+        return System.getenv("OPENSHIFT_MYSQL_DB_USERNAME");
     }
 
     public static String getDatabasePassword() {
-        return "bitnami";
+        return System.getenv("OPENSHIFT_MYSQL_DB_PASSWORD");
     }
 
     public static String getDatabasePort() {
-        return "3306";
+        return System.getenv("OPENSHIFT_MYSQL_DB_PORT");
     }
 
     public static String getDatabaseHost() {
-        return "localhost";
+        return System.getenv("OPENSHIFT_MYSQL_DB_HOST");
     }
 }
