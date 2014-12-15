@@ -61,7 +61,7 @@
 						break;
 					}
 				});
-				u.initPlugin(jQuery("#unityPlayer")[0], "game.unity3d");
+				u.initPlugin(jQuery("#unityPlayer")[0], "jsp/game/game.unity3d");
 			});
 		-->
 		</script>
