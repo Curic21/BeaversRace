@@ -14,8 +14,9 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" href="css/bootstrap.min.css">
+        <style>
             body {
-                padding-top: 80px;
+                padding-top: 60px;
                 padding-bottom: 40px;
             }
         </style>
