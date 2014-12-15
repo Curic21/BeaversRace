@@ -1,8 +1,3 @@
-<%-- 
-    Document   : list.jsp
-    Created on : Jan 16, 2013, 12:57:09 PM
-    Author     : Jose
---%>
 <%@page import="net.daw.helper.Conexion"%>
 <%@page import="net.daw.dao.UsuarioDao"%>
 <%@page import="java.util.ArrayList"%>
@@ -17,7 +12,7 @@
     <div class="span12">
         <div class="row-fluid">
             <div class="span7">       
-                <h2><%=strNombreMantenimiento%></h2>
+                <h2>Lista de Usuarios</h2>
                 <div id="order"></div>
                 <div id="filter"></div>            
                 <div id="registers"></div>

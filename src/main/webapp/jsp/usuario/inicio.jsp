@@ -74,15 +74,6 @@
                 <p id="email2" class="visible-xs">jordieslavabarrera@gmail.com</p>
             </div>
             <div  id="social" class="col-sm-6 col-sm-offset-3 text-center">
-                <!--
-                <ul class="list-inline">
-                    <li><i class="fa fa-facebook fa-3x"></i>
-                    </li>
-                    <li><i class="fa fa-twitter fa-3x"></i>
-                    </li>
-                    <li><i class="fa fa-dribbble fa-3x"></i>
-                    </li>
-                </ul>-->
             </div> 
 
         </div>

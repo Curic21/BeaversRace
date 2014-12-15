@@ -50,9 +50,12 @@ public class ControlJsp extends HttpServlet {
         if (ob == null) {
             ob = "usuario";
         }
+        
+// redirecciones de la página principal. Indica hacia que apartados te permite dirigirte o no.
+        
         if (request.getSession().getAttribute("usuarioBean") == null) {
             ob = "usuario";
-            if (!op.equals("inicio") && !op.equals("login02")) {
+            if (!op.equals("inicio") && !op.equals("login02") && !op.equals("register01") && !op.equals("register02")) {
                 op = "login01";
             }
         }
@@ -62,6 +65,7 @@ public class ControlJsp extends HttpServlet {
             response.setContentType("text/html; charset=UTF-8");
             getServletContext().getRequestDispatcher("/jsp/" + ob + "/" + op + ".jsp").forward(request, response);
         } else {
+            
             //procesamos la autenticación
             if (ob.equalsIgnoreCase("usuario")) {
                 if (op.equalsIgnoreCase("login02")) {
@@ -77,21 +81,56 @@ public class ControlJsp extends HttpServlet {
                         oUsuario = oUsuarioDao.getFromLogin(oUsuario);
                         if (oUsuario.getId() != 0) {
                             //rellena el tipo de usuario
-                            oUsuario = oUsuarioDao.type(oUsuario);
+//                            oUsuario = oUsuarioDao.type(oUsuario);
                             request.getSession().setAttribute("usuarioBean", oUsuario);
                         }
+                    }
+                }
+                   // Registrarse
+                
+                 if (op.equalsIgnoreCase("register02")) {
+                    UsuarioBean oUsuario = new UsuarioBean();
+
+                    String user = request.getParameter("user");
+                    String pass = request.getParameter("password");
+                    String email = request.getParameter("email");
+
+                    if (!user.equals("") && !pass.equals("")) {
+                        oUsuario.setLogin(user);
+                        oUsuario.setPassword(pass);
+                        oUsuario.setEmail(email);
+                       
+                        //Busca si hay ya un usuario registrado y lo valida
+                        
+                        UsuarioDao oUsuarioDao = new UsuarioDao(Conexion.getConection());
+                        oUsuario = oUsuarioDao.detectUser(oUsuario);
+                        
+                        if(oUsuario.getId() == 0){
+                            oUsuario = oUsuarioDao.set(oUsuario);
+                        }
+
+                        request.getSession().setAttribute("usuarioRegistrado", oUsuario);
+                        System.out.println(oUsuario.getId());
 //                        if (oUsuario.getId() != 0) {
-//                            oUsuario = oUsuarioDao.get(oUsuario);
-//                            if (oUsuario.getLogin().equals(login) && oUsuario.getPassword().equals(pass)) {
-//                                request.getSession().setAttribute("usuarioBean", oUsuario);
-//                            }
+//                            //rellena el tipo de usuario
+//                            oUsuario = oUsuarioDao.type(oUsuario);
+//                            request.getSession().setAttribute("usuarioBean", oUsuario);
 //                        }
                     }
                 }
+                
+                
                 if (op.equalsIgnoreCase("logout")) {
                     request.getSession().invalidate();
                 }
             }
+            
+         
+            
+            
+             
+             
+             
             //servimos el jsp dentro de index.jsp
             request.setAttribute("contenido", "jsp/" + ob + "/" + op + ".jsp");
             getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);

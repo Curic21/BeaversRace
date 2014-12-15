@@ -19,7 +19,7 @@ public class UsuarioGetprettycolumns implements GenericOperation {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
         try {
-            String data = "{\"data\": [\"id\", \"login\", \"password\"]}";
+            String data = "{\"data\": [\"id\", \"login\", \"password\", \"e-mail\", \"Tipo de usuario\"]}";
             return data;
         } catch (Exception e) {
             throw new ServletException("UsuarioGetpagesJson: View Error: " + e.getMessage());

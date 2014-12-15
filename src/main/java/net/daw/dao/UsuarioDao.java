@@ -30,6 +30,9 @@ public class UsuarioDao extends GenericDaoImplementation<UsuarioBean> {
                 oUsuario.setId(Integer.parseInt(strId));
                 String pass = oUsuario.getPassword();
                 oUsuario.setPassword(oMysql.getOne("usuario", "password", oUsuario.getId()));
+                oUsuario.setEmail(oMysql.getOne("usuario", "email", oUsuario.getId()));
+                oUsuario.setTipoUsuario(Integer.parseInt(oMysql.getOne("usuario", "tipoUsuario", oUsuario.getId())));
+
                 if (!pass.equals(oUsuario.getPassword())) {
                     oUsuario.setId(0);
                 }
@@ -41,27 +44,43 @@ public class UsuarioDao extends GenericDaoImplementation<UsuarioBean> {
         }
     }
 
-    public UsuarioBean type(UsuarioBean oUsuarioBean) throws Exception {
-
+    //Comprobar si el usuario existe
+    public UsuarioBean detectUser(UsuarioBean oUsuario) throws Exception {
         try {
-            AlumnoDao oAlumnoDao = new AlumnoDao(enumTipoConexion);
-            AlumnoBean oAlumnoBean = oAlumnoDao.getFromId_usuario(oUsuarioBean);
-            oUsuarioBean.setTipoUsuario(Enum.TipoUsuario.Alumno);
-        } catch (Exception e1) {
-                try {
-                    ProfesorDao oProfesorDao = new ProfesorDao(enumTipoConexion);
-                    ProfesorBean oProfesorBean = oProfesorDao.getFromId_usuario(oUsuarioBean);
-                    oUsuarioBean.setTipoUsuario(Enum.TipoUsuario.Profesor);
-                } catch (Exception e3) {
-                    throw new Exception("UsuarioDao.type: Error: " + e3.getMessage());
-                }
-            
-        } finally {
+            oMysql.conexion(enumTipoConexion);
+            String strUser = oMysql.getId("usuario", "login", oUsuario.getLogin());
+            if (strUser == null) {
+                oUsuario.setId(0);
+            } else {
+                oUsuario.setId(-1);
+            }
             oMysql.desconexion();
+            return oUsuario;
+        } catch (Exception e) {
+            throw new Exception("UsuarioDao.getFromLogin: Error: " + e.getMessage());
         }
-        return oUsuarioBean;
     }
- 
+
+//    public UsuarioBean type(UsuarioBean oUsuarioBean) throws Exception {
+//
+//        try {
+//            AlumnoDao oAlumnoDao = new AlumnoDao(enumTipoConexion);
+//            AlumnoBean oAlumnoBean = oAlumnoDao.getFromId_usuario(oUsuarioBean);
+//            oUsuarioBean.setTipoUsuario(Enum.TipoUsuario.Alumno);
+//        } catch (Exception e1) {
+//                try {
+//                    ProfesorDao oProfesorDao = new ProfesorDao(enumTipoConexion);
+//                    ProfesorBean oProfesorBean = oProfesorDao.getFromId_usuario(oUsuarioBean);
+//                    oUsuarioBean.setTipoUsuario(Enum.TipoUsuario.Profesor);
+//                } catch (Exception e3) {
+//                    throw new Exception("UsuarioDao.type: Error: " + e3.getMessage());
+//                }
+//            
+//        } finally {
+//            oMysql.desconexion();
+//        }
+//        return oUsuarioBean;
+//    }
     @Override
     public UsuarioBean get(UsuarioBean oUsuarioBean) throws Exception {
         if (oUsuarioBean.getId() > 0) {
@@ -72,6 +91,8 @@ public class UsuarioDao extends GenericDaoImplementation<UsuarioBean> {
                 } else {
                     oUsuarioBean.setLogin(oMysql.getOne("usuario", "login", oUsuarioBean.getId()));
                     oUsuarioBean.setPassword(oMysql.getOne("usuario", "password", oUsuarioBean.getId()));
+                    oUsuarioBean.setEmail(oMysql.getOne("usuario", "email", oUsuarioBean.getId()));
+                    oUsuarioBean.setTipoUsuario(Integer.parseInt(oMysql.getOne("usuario", "tipoUsuario", oUsuarioBean.getId())));
                 }
             } catch (Exception e) {
                 throw new Exception("UsuarioDao.getUsuario: Error: " + e.getMessage());
@@ -84,5 +105,4 @@ public class UsuarioDao extends GenericDaoImplementation<UsuarioBean> {
         return oUsuarioBean;
     }
 
-    
 }

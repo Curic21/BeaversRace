@@ -1,6 +1,5 @@
 <%@page import="net.daw.bean.UsuarioBean"%>
 <%UsuarioBean user = (UsuarioBean) request.getSession().getAttribute("usuarioBean");%>
-
 <!DOCTYPE html>
 <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -15,7 +14,6 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/videogame.css"><style>
             body {
                 padding-top: 60px;
                 padding-bottom: 40px;
@@ -73,9 +71,8 @@
                 %>    
                 <div class="row-fluid">
                     <div class="span12">
-                        <hr id="copyright">
-                         &copy; Jordi Eslava 2014
-                    </div>   
+                        <center><hr id="copyright">&copy; Jordi Eslava 2014</center>
+                         </div> 
                 </div>
             </div>
         </div>                    
@@ -105,13 +102,6 @@
         <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
         <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script>
-        <script src="./js/vendor/jquery.validate.min.js"></script>
-        <script src="./js/vendor/Box2dWeb-2.1.a.3.min.js"></script>
-        <script src="./js/vendor/Box2dWeb-2.1.a.3.js"></script>
-        <script src="./js/framework.js"></script>
-        <script src="./js/videogame.js"></script>
-        <script type="text/javascript" src="./js/gamequery.js"></script>
-        <script src="./js/tutorial.js"></script>
         <!--------------------------------------->
 
                  
@@ -132,117 +122,7 @@
                 });
             });
         </script>
-        <script type="text/javascript">
-           var x = 1;
-            var y = 1;
-            var obstaculos = new Array(10);
-
-            for (i = 1; i < 11; i++) {
-
-                obstaculos[i] = new Array(10);
-
-            }
-
-
-            obstaculos[2][9] = 1;
-            obstaculos[5][9] = 1;
-            obstaculos[6][9] = 1;
-            obstaculos[7][9] = 1;
-            obstaculos[8][7] = 1;
-            obstaculos[9][7] = 1;
-            obstaculos[8][9] = 1;
-            obstaculos[9][9] = 1;
-            obstaculos[6][8] = 1;
-
-
-            $(document).ready(function() {
-
-                $("body").keypress(function(e) {
-
-
-                    switch (e.which) {
-
-                        case 100: //pulsamos 'D'
-
-                            if (x < 10) {
-                                //alert(obstaculos[x+1][y]);
-                                if (obstaculos[x + 1][y] != 1) {
-                                    $('#pac').animate({"left": "+=1em"}, 500);
-                                    $('#cerrado').animate({opacity: 1}, 200, function() {
-                                        $('#izquierda').css("opacity", "0");
-                                        $('#arriba').css("opacity", "0");
-                                        $('#abajo').css("opacity", "0");
-                                        $('#derecha').css("opacity", "1");
-                                        $('#cerrado').animate({opacity: 0}, 200);
-                                    });
-                                    x += 1;
-                                    $('#equis').val(x);
-                                }
-                            }
-                            break;
-
-                        case 97: //pulsamos 'A'
-
-                            if (x > 1) {
-                                if (obstaculos[x - 1][y] != 1) {
-
-                                    $('#pac').animate({"left": "-=1em"}, 500);
-                                    $('#cerrado').animate({opacity: 1}, 200, function() {
-                                        $('#derecha').css("opacity", "0");
-                                        $('#arriba').css("opacity", "0");
-                                        $('#abajo').css("opacity", "0");
-                                        $('#izquierda').css("opacity", "1");
-                                        $('#cerrado').animate({opacity: 0}, 200);
-                                    });
-                                    x -= 1;
-                                    $('#equis').val(x);
-                                }
-                            }
-
-                            break;
-
-                        case 115: //pulsamos 'S'
-
-                            if (y < 10) {
-                                if (obstaculos[x][y + 1] != 1) {
-                                    $('#pac').animate({"top": "+=1em"}, 500);
-                                    $('#cerrado').animate({opacity: 1}, 200, function() {
-                                        $('#izquierda').css("opacity", "0");
-                                        $('#arriba').css("opacity", "0");
-                                        $('#derecha').css("opacity", "0");
-                                        $('#abajo').css("opacity", "1");
-                                        $('#cerrado').animate({opacity: 0}, 200);
-                                    });
-                                    y += 1;
-                                    $('#ygriega').val(y);
-                                }
-                            }
-
-                            break;
-
-                        case 119: //pulsamos 'W'
-
-                            if (y > 1) {
-                                if (obstaculos[x][y - 1] != 1) {
-                                    $('#pac').animate({"top": "-=1em"}, 500);
-                                    $('#cerrado').animate({opacity: 1}, 200, function() {
-                                        $('#izquierda').css("opacity", "0");
-                                        $('#derecha').css("opacity", "0");
-                                        $('#abajo').css("opacity", "0");
-                                        $('#arriba').css("opacity", "1");
-                                        $('#cerrado').animate({opacity: 0}, 200);
-                                    });
-                                    y -= 1;
-                                    $('#ygriega').val(y);
-                                }
-                            }
-
-                    }
-                });
-
-            });
-
-        </script>	
+        
         
         <script>
 
@@ -260,32 +140,18 @@
             });
 
 
-            $('#lnkAlumno').unbind('click');
-            $('#lnkAlumno').click(function() {
-                var alumno = objeto('alumno', '<%=request.getContextPath()%>');
-                var alumnoView = vista(alumno, '<%=request.getContextPath()%>');
+            $('#lnkUsers').unbind('click');
+            $('#lnkUsers').click(function() {
+                var usuario = objeto('usuario', '<%=request.getContextPath()%>');
+                var usuarioView = vista(usuario, '<%=request.getContextPath()%>');
 
                 $('#indexContenidoJsp').empty();
-                $('#indexContenido').empty().append(alumnoView.getEmptyList());
+                $('#indexContenido').empty().append(usuarioView.getEmptyList());
 
-                var alumnoControl = control_alumno_list('<%=request.getContextPath()%>');
-                alumnoControl.inicia(alumnoView, 1, null, null, 10, null, null, null, null);
+                var usuarioControl = control_usuario_list('<%=request.getContextPath()%>');
+                usuarioControl.inicia(usuarioView, 1, null, null, 10, null, null, null, null);
                 return false;
             });
-
-            $('#lnkProfesor').unbind('click');
-            $('#lnkProfesor').click(function() {
-                var profesor = objeto('profesor', '<%=request.getContextPath()%>');
-                var profesorView = vista(profesor, '<%=request.getContextPath()%>');
-
-                $('#indexContenidoJsp').empty();
-                $('#indexContenido').empty().append(profesorView.getEmptyList());
-
-                var profesorControl = control_profesor_list('<%=request.getContextPath()%>');
-                profesorControl.inicia(profesorView, 1, null, null, 10, null, null, null, null);
-                return false;
-            });
-
 
             $('#lnkRequerimiento').unbind('click');
             $('#lnkRequerimiento').click(function() {
