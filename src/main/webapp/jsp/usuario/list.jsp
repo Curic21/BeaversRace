@@ -69,7 +69,7 @@
                         </fieldset>
                     </form>                
                 </div> 
-                <button class="btn" id="crear">Crear <%=strNombreMantenimiento%></button>
+               <!-- <button class="btn" id="crear">Crear <%=strNombreMantenimiento%></button>-->
             </div>
         </div>
         <br>

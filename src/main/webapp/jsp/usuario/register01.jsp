@@ -4,7 +4,7 @@
     Author     : rafa
 --%>
 
-<form id="loginForm" action="jsp" class="form-horizontal" method="post">
+<form id="loginForm" action="jsp" class="form-horizontal" method="post" >
     <h1>Formulario de registro</h1>
     <input type="hidden" name="ob" value="usuario" />
     <input type="hidden" name="op" value="register02" />
@@ -21,6 +21,12 @@
         </div>
     </div>
     <div class="control-group">
+        <label class="control-label" for="inputPassword2">Rewrite Password:</label>
+        <div class="controls">
+            <input type="password" id="inputPassword2" placeholder="Rewrite Password" name="password2">
+        </div>
+    </div>
+    <div class="control-group">
         <label class="control-label" for="inputEmail">E-mail:</label>
         <div class="controls">
             <input type="email" id="inputEmail" placeholder="E-mail" name="email">
@@ -32,4 +38,35 @@
         </div>
     </div>
 </form>
-
+<script>
+    $('#loginForm').validate({
+        rules: {
+            user: {
+                required: true,
+                maxlength: 255
+            },
+            password: {
+                required: true,
+                maxlength: 255
+            },
+            password2: {
+                required: true,
+                maxlength: 255,
+                equalTo: "#inputPassword"
+            },
+            email: {
+                required: true,
+                maxlength: 255,
+                email: true
+            }
+        },
+        highlight: function(element) {
+            $(element).closest('.control-group').removeClass('success').addClass('error');
+        },
+        success: function(element) {
+            element
+                    .text('OK!').addClass('valid')
+                    .closest('.control-group').removeClass('error').addClass('success');
+        }
+    });
+</script>

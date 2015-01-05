@@ -2,33 +2,27 @@
    APP custom styles. Rafael Aznar.
    ========================================================================== */
 body {
-    /*gradient background*/
-    background: #3496ba;
-    background: -moz-radial-gradient(center, ellipse cover, #3496ba 0%, #141a49 100%);
-    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#3496ba), color-stop(100%,#141a49));
-    background: -webkit-radial-gradient(center, ellipse cover, #3496ba 0%,#141a49 100%);
-    background: -o-radial-gradient(center, ellipse cover, #3496ba 0%,#141a49 100%);
-    background: -ms-radial-gradient(center, ellipse cover, #3496ba 0%,#141a49 100%);
-    background: radial-gradient(ellipse at center, #3496ba 0%,#141a49 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3496ba', endColorstr='#141a49',GradientType=1 );
-    color:white;
+    background-image: url(../img/back.png); 
+    background-attachment:fixed;
+    background-size: 100%; 
+
+
     font-size: 100%;
     font-family: Verdana, Geneva, sans-serif;
 }
 #datos{
-    color: #006699;
-    background-color: #e3ffff;
-    border: 2px solid #8ecaff;
+    color: #000000;
+    background-color: #F8F0D8;
+    border: 5px solid #FFD589;
     border-radius: 0.4vw;
 }
 th{
-    color: #004e4e;
+    color: #A92B06;
 }
 .span7, .span5, .span5>legend{  
     padding: 2vw;
-    color: #003f76 !important;
-    background-color: #d7ecff;
-    border: 2px solid #8ecaff;
+    background-color: #f8f0d8;
+    border: 5px solid #FFD589;
     border-radius: 0.4vw;
 }
 
@@ -36,14 +30,11 @@ th{
 #logo{
     width: 70%;
     height:50%;
-    padding: 0 0 2em 0;
-    margin: 0;
 }
 #logo2{
     width: 60%;
     height:50%;
-    padding: 0 0 2em 0;
-    margin: 0;
+
 }
 .btn-toolbar {
     margin-top: 0px;
@@ -65,6 +56,7 @@ th{
 }
 .well{
     background-color: #FFFFFF;
+    font-size: 18px;
     position: fixed;
     min-height: 10px;
     padding: 5px;
@@ -85,11 +77,10 @@ th{
 .nav-list>.active>a, .nav-list>.active>a:hover, .nav-list>.active>a:focus {
     background-color: #4ad8ff;
 }
-.nav nav-justified navbar-fixed-top >li{
-    color: #4ad8ff;
-}
+
 .navbar-inverse .navbar-text{
-    color:  #006699 !important;
+    color:  #08C !important;
+    font-weight: bold;
 }
 ul{
     list-style: none;
@@ -104,23 +95,15 @@ a:link{
     border-bottom-width: 4px;
 }
 
-.navbar-inverse .nav .active>a, .navbar-inverse .nav .active>a:hover, .navbar-inverse .nav .active>a:focus{
-    background-color: #cc6600;
-}
-.navbar-inverse .brand, .navbar-inverse .nav>li>a {
+.navbar-inverse .brand, .navbar-inverse .nav>li>a, .navbar-inverse .navbar-link {
     text-shadow: none;
-    color: #006699;
+    color: #08C !important;
 }
-.navbar-inverse .brand:hover, .navbar-inverse .nav>li>a:hover, .navbar-inverse .brand:focus, .navbar-inverse .nav>li>a:focus {
-    color: #cc6600;
+.navbar-inverse .brand:hover, .navbar-inverse .nav>li>a:hover, .navbar-inverse .brand:focus, .navbar-inverse .nav>li>a:focus, .navbar-inverse .navbar-link:hover {
+    color: #cc6600 !important;
 
 }
-.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus, .dropdown-submenu:hover>a, .dropdown-submenu:focus>a {
-    background-color:  #003f76;
-}    
-.caret, .caret:hover {
-    color: #cc6600;
-}
+
 .navbar-inverse .nav li.dropdown.open>.dropdown-toggle, .navbar-inverse .nav li.dropdown.active>.dropdown-toggle, .navbar-inverse .nav li.dropdown.open.active>.dropdown-toggle {
     background-color: #cc6600;
     background-image: none;
@@ -159,13 +142,13 @@ label.error {
 }
 
 #history{
-    margin-top: 3em;
-    background-image: url("../img/scroll.png");
+    background-image: url("../img/scroll4.png");
     background-repeat: no-repeat;
     background-size: 100%;
+    padding-bottom: 6em;
 }
 
-#sinopsis1 > p{
+#sinopsis1{
 
     color: #330000;
     font-family:Times New Roman;
@@ -174,58 +157,65 @@ label.error {
     font-size: 1.7vw;
     width: 50%;
     padding-left: 13em;
-    padding-top: 2em;
+    padding-top: 5em;
     padding-bottom: 3em;
+}
+
+#sinopsis1 > .list, #sinopsis2 > .list{
+    color: #330000;
+    font-style: normal;
+    font-size: 1.6vw;
+    text-align: left;
+    font-weight: normal;
+    /* padding-top: 1em; */
+
 }
 
 #sinopsis1>h1{
     color: #330000;
-    padding-top: 1.8em;
-    padding-left: 1em;
+    padding-top: 1.5em;
+    //padding-left: 1em;
+    padding-bottom: 0.5em;
     font-family:Times New Roman;
-    text-shadow: 1px 1px  black;
+    //text-shadow: 1px 1px  black;
     font-weight: bold;
     font-style: italic;
-    font-size: 4vw;
+    font-size: 3.5vw;
 }
 
 
 #historyp{
-    margin-top: 3em;
-    background-image: url("../img/scroll.png");
+    // margin-top: 3em;
+    background-image: url("../img/scroll4.png");
     background-repeat: no-repeat;
     background-size: 100%;
 }
 
-#sinopsis2 > p{
-
+#sinopsis2{
     color: #330000;
     font-family:Times New Roman;
     font-weight: bold;
     font-style: italic;
+    font-size: 1.5vw;
     width: 50%;
     padding-left: 14em;
-    padding-top: 2em;
+    padding-top: 2.5em;
     padding-bottom: 3em;
 }
 
 #sinopsis2>h1{
     color: #330000;
-    padding-top: 1em;
+    padding-top: 2.2em;
+    padding-left: 1em;
+    padding-bottom: 0.5em;
     font-family:Times New Roman;
-    text-shadow: 1px 1px  black;
     font-weight: bold;
     font-style: italic;
-    font-size: 4vw;
+    font-size: 3.5vw;
 }
 
 
-.portfolio-item, .img-portfolio {
-    margin: 1em 1em 1em 4em;
-    padding: 3em;
-    width: 350px;
-    height: 250px;
-}
+
 
 
 .pictures{
@@ -245,124 +235,40 @@ video{
 #video1{
     margin-left: 5em;
 }
-#canvasdiv{
-    margin-left: 8em;
-}
-#canvas{
-    background-image: url('../img/forest.png');
-}
-#playground{
-    margin-left: 12em; 
-    width: 800px; height: 450px; 
-    background-image: url('../img/forest.png'); 
-    position: absolute; 
-    display: block; 
-    overflow: hidden; 
-    background-position: initial initial; 
-    background-repeat: initial initial;
-}
-#welcomeScreen{
-    width: 800px; height: 450px; 
-    position: absolute; 
-    z-index: 100; 
-    background-image: url(../img/logo.png); 
-    background-size: 80%;
-    left: 6em;
-    background-repeat: no-repeat;
-    font-family: verdana, sans-serif;
+
+a:hover{
+    color: #cc6600 !important;
 }
 
-
-
-#startbutton{
-    cursor: pointer;
-    color: #cc6600;
-    font-weight: bold;
-    font-style: italic;
-    font-size: 4vw;
-    font-family: verdana;
-
+.item > img{
+    border: 5px solid #cc6600;
+    width: 45em;
 }
-#start{
-    position: absolute; 
-    top: 320px; 
-    width: 20em;
-    left: 8em;
+.socialNetwork, .socialNetwork> a> img{
+    list-style-type: none;
+    display:inline; 
+    width: 52px;
+    height: 52px;
+    margin-right: 1em;
 }
 
-
-#gQ_scenegraph{
-    visibility: hidden
-}
-.gQ_group{
-    position: absolute; 
-    display: block; 
-    overflow: visible; 
-    height: 450px; 
-    width: 800px; -webkit-transform: translate(0px, 0px) rotate(0deg) scale(1, 1);
-}
-#background1{
-    position: absolute; 
-    display: block; 
-    overflow: hidden; 
-    height: 450px; width: 800px; -webkit-transform: translate(0px, 0px) rotate(0deg) scale(1, 1); 
-    background-position: 0px 0px; background-repeat: no-repeat no-repeat;
-}
-#background2{
-    position: absolute; display: block; overflow: hidden; 
-    height: 450px; width: 800px; -webkit-transform: translate(700px, 0px) rotate(0deg) scale(1, 1); 
-    background-position: 0px 0px; background-repeat: no-repeat no-repeat;
-}
-#background3{
-    position: absolute; display: block; overflow: hidden; 
-    height: 450px; width: 800px; -webkit-transform: translate(0px, 0px) rotate(0deg) scale(1, 1); 
-    background-position: 0px 0px; background-repeat: no-repeat no-repeat;
-}
-#background4{
-    position: absolute; display: block; overflow: hidden; 
-    height: 450px; width: 800px; -webkit-transform: translate(700px, 0px) rotate(0deg) scale(1, 1); 
-    background-position: 0px 0px; background-repeat: no-repeat no-repeat;
-}
-#background5{
-    position: absolute; display: block; overflow: hidden; 
-    height: 450px; width: 800px; -webkit-transform: translate(0px, 0px) rotate(0deg) scale(1, 1); 
-    background-position: 0px 0px; background-repeat: no-repeat no-repeat;
-}
-#background6{
-    position: absolute; display: block; overflow: hidden; 
-    height: 450px; width: 800px; -webkit-transform: translate(700px, 0px) rotate(0deg) scale(1, 1); 
-    background-position: 0px 0px; background-repeat: no-repeat no-repeat;
+#copyright2{
+    padding-left: 14em;
 }
 
-#actors{
-    position: absolute; display: block; overflow: visible; 
-    height: 250px; width: 700px; -webkit-transform: translate(0px, 0px) rotate(0deg) scale(1, 1);
+#contactme{
+    background-color: #fff0c5;
+    border: 5px solid #b0804d;
+    -webkit-border-radius: 25px;
+    padding: 2em;
+    width: 85%;
+    margin-left: 4em;
 }
-#player{
-    position: absolute; display: block; overflow: visible; 
-    height: 26px; width: 100px; -webkit-transform: translate(350px, 125px) rotate(0deg) scale(1, 1);
+
+.table{
+   margin-top: 0.3em;
 }
-#playerBoostUp{
-    position: absolute; display: block; overflow: hidden; 
-    height: 18px; width: 14px; -webkit-transform: translate(37px, 15px) rotate(0deg) scale(1, 1); 
-    background-position: 0px 0px;
-}
-#playerBody{
-    position: absolute; display: block; overflow: hidden; 
-    height: 26px; width: 100px; -webkit-transform: translate(0px, 0px) rotate(0deg) scale(1, 1); 
-    background-position: 0px 0px; background-repeat: no-repeat no-repeat;
-}
-#playerBooster{
-    position: absolute; display: block; overflow: hidden; 
-    height: 14px; width: 36px; -webkit-transform: translate(-32px, 5px) rotate(0deg) scale(1, 1); 
-    background-position: 0px 0px; background-repeat: repeat no-repeat;
-}
-#playerBoostDown{
-    position: absolute; display: block; overflow: hidden;
-    height: 18px; width: 14px; -webkit-transform: translate(37px, -7px) rotate(0deg) scale(1, 1); 
-    background-position: 0px 0px;
-}
-#playerMissileLayer{
-    position: absolute; display: block; overflow: visible; 
-    height: 250px; width: 700px; -webkit-transform: translate(0px, 0px) rotate(0deg) scale(1, 1);
+
+.control-group.success .control-label, .control-group.success .help-block, .control-group.success .help-inline {
+color: black !important;
 }

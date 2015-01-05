@@ -8,19 +8,19 @@
         <ul class="nav nav-justified navbar-fixed-top">
             <li><a href="jsp">Home</a></li>
             <li><a href="#historyp">History</a></li>
-          <!--<li><a href="#portfolio">Screenshots</a></li>-->
-            <li><a href="#videosp">Videos</a></li>
+            <li><a href="#screenshots">Screenshots</a></li>
+            <li><a href="#download">Download</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </div>
 
 <%}else{ %>
- <div class="masthead visible-lg visible-md">
+<div class="masthead visible-lg visible-md">
         <ul class="nav nav-justified navbar-fixed-top">
             <li><a href="jsp">Home</a></li>
             <li><a href="#history">History</a></li>
-             <!--<li><a href="#portfolio">Screenshots</a></li>-->
-            <li><a href="#videos">Videos</a></li>
+            <li><a href="#screenshots">Screenshots</a></li>
+            <li><a href="#download">Download</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </div>

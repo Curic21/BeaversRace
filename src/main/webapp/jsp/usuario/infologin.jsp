@@ -15,18 +15,18 @@
         
         switch (user.getTipoUsuario()){
             case 0: 
-               permisos = "Jugador";
+               permisos = "Player";
                 break;
             case 1:
-                permisos = "Administrador";
+                permisos = "Administrator";
                 break;
         };
         
     %>
-    Estás logueado como <%=usuario%> / <%=permisos%>&nbsp;&nbsp;&nbsp;&nbsp;
-    <a class="navbar-link" href="jsp?ob=usuario&op=logout">(Salir del sistema)</a>
+    <%=usuario%> / <%=permisos%>&nbsp;&nbsp;&nbsp;
+    <a class="navbar-link" href="jsp?ob=usuario&op=logout">Logout</a>
     <%} else {%>
-    <a class="navbar-link" href="jsp?op=login01&ob=usuario">Login</a>
-    <a class="navbar-link" href="jsp?op=register01&ob=usuario">Registrarse</a>
+    <a class="navbar-link" href="jsp?op=login01&ob=usuario">Login</a>&nbsp;&nbsp;
+    <a class="navbar-link" href="jsp?op=register01&ob=usuario">Register</a>
     <%}%>
 </p>

@@ -10,18 +10,28 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Pixie's Tale - Official Website</title>
-        <meta name="description" content="">
+        <title>Beaver's Race - Official Website</title>
+        <meta name="description" content="This is the Official site of Beaver's Race the Videogame!">
         <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link href="css/sb-admin.css" rel="stylesheet">
+        <style>
             body {
                 padding-top: 60px;
                 padding-bottom: 40px;
             }
         </style>
-        <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
-        <link rel="stylesheet" href="css/main.css">
-        <link href="css/sb-admin.css" rel="stylesheet">
+
+        <!--jQuery-->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
+        <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
+        <script src="./js/vendor/jquery.validate.min.js"></script>
+        <!--------------------------------------->
 
     </head>
     <body>
@@ -34,10 +44,8 @@
                         <span class="icon-bar"></span> 
                         <span class="icon-bar"></span>
                     </a>                 
-                    <div class="nav-collapse collapse">
-                        <%if (user != null) {%>
-                        <jsp:include page="jsp/menuSuperior.jsp" />   
-                        <% }%>
+                    <div class="nav-collapse collapse">                    
+                        <jsp:include page="jsp/menuSuperior.jsp" />    
                         <jsp:include page="jsp/usuario/infologin.jsp" />                        
                     </div>
                 </div>
@@ -71,44 +79,51 @@
                 %>    
                 <div class="row-fluid">
                     <div class="span12">
-                        <center><hr id="copyright">&copy; Jordi Eslava 2014</center>
-                         </div> 
+                        <% if (user != null) { %>
+                        <div id="copyright2">
+                            <center><hr>&copy; <b>Jorge Eslava Barrera</b></center>
+                        </div> 
+                        <%} else { %>
+                        <center><hr id="copyright">&copy; <b>Jorge Eslava Barrera</b></center> 
+                            <% };%>
+                    </div> 
+
+
                 </div>
             </div>
         </div>                    
 
         <!-- carga de javascript -->
 
-        <!--jQuery-->
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
-        <!--------------------------------------->
-
         <!--Bootstrap-->
-        <script src="js/vendor/bootstrap.min.js"></script>   
+        <script src="js/vendor/bootstrap.min.js"></script>
+        <script src="js/vendor/bootstrap-transition.js"></script>
+        <script src="js/vendor/bootstrap-alert.js"></script>
+        <script src="js/vendor/bootstrap-modal.js"></script>
+        <script src="js/vendor/bootstrap-dropdown.js"></script>
+        <script src="js/vendor/bootstrap-scrollspy.js"></script>
+        <script src="js/vendor/bootstrap-tab.js"></script>
+        <script src="js/vendor/bootstrap-tooltip.js"></script>
+        <script src="js/vendor/bootstrap-popover.js"></script>
+        <script src="js/vendor/bootstrap-button.js"></script>
+        <script src="js/vendor/bootstrap-collapse.js"></script>
+        <script src="js/vendor/bootstrap-carousel.js"></script>
+        <script src="js/vendor/bootstrap-typeahead.js"></script>   
         <!--------------------------------------->
 
         <!--Archivos Locales-->
         <script src="js/util.js" charset="UTF-8"></script>
         <script src="js/main.js" charset="UTF-8"></script>
-        <script src="js/control/alumno.js" charset="UTF-8"></script>
         <script src="js/control/usuario.js" charset="UTF-8"></script>
-        <script src="js/control/requerimiento.js" charset="UTF-8"></script>
-        <script src="js/control/profesor.js" charset="UTF-8"></script>
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
         <!--------------------------------------->
 
-        <!--Videojuego-->
-        <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
-        <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script>
-        <!--------------------------------------->
 
-                 
- <!-- Custom JavaScript for Smooth Scrolling -->     
+        <!-- Custom JavaScript for Smooth Scrolling and SideMenu Links-->     
         <script>
             $(function() {
-                $('a[href*=#]:not([href=#])').click(function() {
+                //'a[href*=#]'
+                $('a[href*=#]').click(function() {
                     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
                         var target = $(this.hash);
                         target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
@@ -122,6 +137,9 @@
                 });
             });
 
+            $('#myCarousel').carousel({
+                interval: 3000
+            });
 
             $('#lnkGame').unbind('click');
             $('#lnkGame').click(function() {
@@ -147,19 +165,6 @@
 
                 var usuarioControl = control_usuario_list('<%=request.getContextPath()%>');
                 usuarioControl.inicia(usuarioView, 1, null, null, 10, null, null, null, null);
-                return false;
-            });
-
-            $('#lnkRequerimiento').unbind('click');
-            $('#lnkRequerimiento').click(function() {
-                var requerimiento = objeto('requerimiento', '<%=request.getContextPath()%>');
-                var requerimientoView = vista(requerimiento, '<%=request.getContextPath()%>');
-
-                $('#indexContenidoJsp').empty();
-                $('#indexContenido').empty().append(requerimientoView.getEmptyList());
-
-                var requerimientoControl = control_requerimiento_list('<%=request.getContextPath()%>');
-                requerimientoControl.inicia(requerimientoView, 1, null, null, 10, null, null, null, null);
                 return false;
             });
         </script>

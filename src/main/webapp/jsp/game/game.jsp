@@ -21,7 +21,7 @@
 		<!--
 			var config = {
 				width: 960, 
-				height: 600,
+				height: 535,
 				params: { enableDebugging:"0" }
 				
 			};
@@ -61,26 +61,14 @@
 						break;
 					}
 				});
-				u.initPlugin(jQuery("#unityPlayer")[0], "game.unity3d");
+				u.initPlugin(jQuery("#unityPlayer")[0], "jsp/game/game.unity3d");
 			});
 		-->
 		</script>
     
                 
                 <style type="text/css">
-		<!--
-		body {
-			font-family: Helvetica, Verdana, Arial, sans-serif;
-			background-color: white;
-			color: black;
-			text-align: center;
-		}
-		a:link, a:visited {
-			color: #000;
-		}
-		a:active, a:hover {
-			color: #666;
-		}
+		
 		p.header {
 			font-size: small;
 		}
@@ -119,13 +107,9 @@
 			height: 600px;
 			width: 960px;
 		}
-		-->
-		</style>
+		</style>           
+                
 
-                
-                
-                
-<p class="header"><span>Unity Web Player | </span>Beaver's Race</p>
 		<div class="content">
 			<div id="unityPlayer">
 				<div class="missing">
@@ -139,11 +123,7 @@
 					</a>
 				</div>
 			</div>
-		</div>
-		<p class="footer">&laquo; created with <a href="http://unity3d.com/unity/" title="Go to unity3d.com">Unity</a> &raquo;</p>
-
-    
-    
+		</div>   
 
     <% }%>
     

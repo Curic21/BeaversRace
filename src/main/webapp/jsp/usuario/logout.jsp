@@ -4,5 +4,4 @@
     Author     : rafa
 --%>
 
-<h1>Vd. ha salido del sistema</h1>
-<h4>Hasta pronto.</h4>
+<h3>You have logged out. See you soon!</h3>

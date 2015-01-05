@@ -11,7 +11,6 @@ var control_usuario_list = function(path) {
 
     function cargaBotoneraMantenimiento() {
         var botonera = [
-            {"class": "btn btn-mini action05", "icon": "", "text": "entradas"},
             {"class": "btn btn-mini action01", "icon": "icon-eye-open", "text": ""},
             {"class": "btn btn-mini action02", "icon": "icon-zoom-in", "text": ""},
             {"class": "btn btn-mini action03", "icon": "icon-pencil", "text": ""},
@@ -66,6 +65,10 @@ var control_usuario_list = function(path) {
                     required: true,
                     maxlength: 25,
                     equalTo: "#password"
+                },
+                email: {
+                    required: true,
+                    maxlength: 50                      
                 }
             },
             messages: {
@@ -81,6 +84,10 @@ var control_usuario_list = function(path) {
                     required: "Repite la contraseña",
                     date: "Tiene que ser menos de 25 caracteres",
                     equalTo: "Las contraseñas no concuerdan"
+                },
+                email: {
+                    required: "Introduce tu correo",
+                    date: "Tiene que ser menos de 50 caracteres"
                 }
             },
             highlight: function(element) {
