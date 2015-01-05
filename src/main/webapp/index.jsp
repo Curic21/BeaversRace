@@ -17,6 +17,7 @@
         <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
         <link rel="stylesheet" href="css/main.css">
         <link href="css/sb-admin.css" rel="stylesheet">
+
         <style>
             body {
                 padding-top: 60px;
