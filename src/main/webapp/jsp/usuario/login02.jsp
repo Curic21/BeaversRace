@@ -8,7 +8,7 @@
     <h1>You didn't logged correctly.</h1>
     <h4>There's been a problem with your authentication. Check again your login and password.</h4>
 <% } else { %>
-    <h1>You did log in.</h1>
+    <h1>You logged in.</h1>
     <h3>Welcome <%=oUsuario.getLogin()%>!</h3>
     
 <%} %>

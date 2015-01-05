@@ -5,13 +5,13 @@
 --%>
 
 <form id="loginForm" action="jsp" class="form-horizontal" method="post" >
-    <h1>Formulario de registro</h1>
+    <h1>Register's Form</h1>
     <input type="hidden" name="ob" value="usuario" />
     <input type="hidden" name="op" value="register02" />
     <div class="control-group">
-        <label class="control-label" for="inputUser">Usuario:</label>
+        <label class="control-label" for="inputUser">Nickname:</label>
         <div class="controls">
-            <input type="text" id="inputUser" autofocus="autofocus" placeholder="Nombre de usuario" name="user">
+            <input type="text" id="inputUser" autofocus="autofocus" placeholder="User's name" name="user">
         </div>
     </div>
     <div class="control-group">
@@ -34,7 +34,7 @@
     </div>
     <div class="control-group">
         <div class="controls">
-            <button id="entrarBTN" type="submit" class="btn">Entrar</button>
+            <button id="entrarBTN" type="submit" class="btn">Register</button>
         </div>
     </div>
 </form>

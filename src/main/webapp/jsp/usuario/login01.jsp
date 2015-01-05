@@ -5,13 +5,13 @@
 --%>
 
 <form id="loginForm" action="jsp" class="form-horizontal" method="post">
-    <h1>Formulario de login</h1>
+    <h1>Login's Form</h1>
     <input type="hidden" name="ob" value="usuario" />
     <input type="hidden" name="op" value="login02" />
     <div class="control-group">
-        <label class="control-label" for="inputLogin">Usuario:</label>
+        <label class="control-label" for="inputLogin">Nickname:</label>
         <div class="controls">
-            <input type="text" id="inputLogin" autofocus="autofocus" placeholder="Nombre de usuario" name="login">
+            <input type="text" id="inputLogin" autofocus="autofocus" placeholder="User's name" name="login">
         </div>
     </div>
     <div class="control-group">
@@ -22,7 +22,7 @@
     </div>
     <div class="control-group">
         <div class="controls">
-            <button id="entrarBTN" type="submit" class="btn">Entrar</button>
+            <button id="entrarBTN" type="submit" class="btn">Login</button>
         </div>
     </div>
 </form>

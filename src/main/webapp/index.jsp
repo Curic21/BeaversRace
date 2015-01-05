@@ -78,7 +78,7 @@
                     out.print("</div>");
                 %>    
                 <div class="row-fluid">
-                    <div class="span12">
+                    <div class="span12 hidden-phone">
                         <% if (user != null) { %>
                         <div id="copyright2">
                             <center><hr>&copy; <b>Jorge Eslava Barrera</b></center>
@@ -87,7 +87,9 @@
                         <center><hr id="copyright">&copy; <b>Jorge Eslava Barrera</b></center> 
                             <% };%>
                     </div> 
-
+                    <center class='visible-phone'>
+                        <hr>
+                        &copy; <b>Jorge Eslava Barrera</b></center> 
 
                 </div>
             </div>

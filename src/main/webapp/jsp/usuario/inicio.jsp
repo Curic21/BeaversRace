@@ -15,9 +15,9 @@
     <div id="historyp">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 text-center" id="sinopsis2">
-                    <h1>Help Barry to get home!</h1>
-                    <div>
+                <div class="col-lg-12 hidden-phone" id="sinopsis3">
+                    <h1 class="text-center">Help Barry to get home!</h1>
+                    <div class="text-center">
                         Barry has been lost into the woods and he doesn't know how to go back home. He only remember that his home is close to the river.<br/><br/>
                         Help Barry to jump through the platforms with your own hands to get back home. The more time you get, the closer you'll be from home.<br/><br/>
                     </div>
@@ -33,6 +33,15 @@
                             <li>- If you let Barry fall from a platform, he will only jump one time.</li>
                             <li>- If you jump and hit Barry with a platform in to his head, he will be unconscious and  unable to jump.</li>
                         </ul>
+                    </div>
+                </div>
+                <div id="historyp2">
+                    <div class="col-lg-12 text-center visible-phone" id="sinopsisp2">
+                        <h1>Help Barry to get home!</h1>
+                        <div>
+                            Barry has been lost into the woods and he doesn't know how to go back home. He only remember that his home is close to the river.<br/><br/>
+                            Help Barry to jump through the platforms with your own hands to get back home. The more time you get, the closer you'll be from home.<br/><br/>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -117,10 +126,10 @@
                         </ul>
                     </div>
                 </div>
-                <div id="historyp">
-                <div class="col-lg-12 text-center visible-phone" id="sinopsis2">
-                    <h1>Help Barry to get home!</h1>
-                    
+                <div id="history2">
+                    <div class="col-lg-12 text-center visible-phone" id="sinopsis2">
+                        <h1>Help Barry to get home!</h1>
+
                         <div>
                             Barry has been lost into the woods and he doesn't know how to go back home. He only remember that his home is close to the river.<br/><br/>
                             Help Barry to jump through the platforms with your own hands to get back home. The more time you get, the closer you'll be from home.<br/><br/>
@@ -178,7 +187,7 @@
 <%}%>
 
 <footer>
-    <div id="contact" class='text-center visible-desktop visible-tablet'>
+    <div id="contact" class='text-center hidden-phone'>
         <div id="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2">

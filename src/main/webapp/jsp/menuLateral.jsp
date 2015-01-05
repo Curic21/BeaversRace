@@ -1,7 +1,7 @@
 <%@page import="net.daw.bean.UsuarioBean"%>
 <%UsuarioBean user = (UsuarioBean) request.getSession().getAttribute("usuarioBean");%>
 
-<div class="well sidebar-nav">
+<div class="well sidebar-nav visible-desktop">
     <li class="nav-header">Main Menu</li>
     <ul class="navbar nav-list">
         <li><a id="lnkHome"  href="jsp">Home</a></li>

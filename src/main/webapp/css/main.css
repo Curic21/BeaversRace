@@ -139,7 +139,7 @@ label.error {
     margin-top: 2px;
 }
 
-#history{
+#history, #historyp{
     background-image: url("../img/scroll4.png");
     background-repeat: no-repeat;
     background-size: 100%;
@@ -159,7 +159,7 @@ label.error {
     padding-bottom: 3em;
 }
 
-#sinopsis1 > .list, #sinopsis2 > .list{
+#sinopsis1 > .list, #sinopsis3 > .list{
     color: #330000;
     font-style: normal;
     font-size: 1.6vw;
@@ -182,14 +182,37 @@ label.error {
 }
 
 
-#historyp{
+#history2, #historyp2{
     // margin-top: 3em;
     background-image: url("../img/scroll2.png");
     background-repeat: no-repeat;
     background-size: 100%;
 }
 
-#sinopsis2{
+#sinopsis3{
+    color: #330000;
+    font-family:Times New Roman;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 1.7vw;
+    width: 50%;
+    padding-left: 13em;
+    padding-top: 5em;
+    padding-bottom: 3em;
+}
+#sinopsis3>h1{
+    color: #330000;
+    padding-top: 1em;
+    font-family:Times New Roman;
+    text-shadow: 1px 1px  black;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 3vw;
+}
+
+
+
+#sinopsis2 , #sinopsisp2{
     color: #330000;
     font-family:Times New Roman;
     font-weight: bold;
@@ -201,7 +224,7 @@ label.error {
 
 }
 
-#sinopsis2>h1{
+#sinopsis2>h1 , #sinopsisp2 > h1{
     color: #330000;
     padding-top: 2.7em;
     font-family:Times New Roman;
@@ -262,3 +285,4 @@ a:hover{
 .control-group.success .control-label, .control-group.success .help-block, .control-group.success .help-inline {
     color: black !important;
 }
+
