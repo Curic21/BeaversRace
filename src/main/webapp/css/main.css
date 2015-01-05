@@ -278,6 +278,11 @@ a:hover{
     margin-left: 6em;
 }
 
+#contactme, #contactme2{
+    padding: 1em;
+    font-weight: bold;
+}
+
 .table{
     margin-top: 0.3em;
 }
