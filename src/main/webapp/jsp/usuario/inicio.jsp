@@ -97,7 +97,7 @@
     <div id="history">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 text-center" id="sinopsis1">
+                <div class="col-lg-12 text-center hidden-phone" id="sinopsis1">
                     <h1>Help Barry to get home!</h1>
                     <div>
                         Barry has been lost into the woods and he doesn't know how to go back home. He only remember that his home is close to the river.<br/><br/>
@@ -115,6 +115,16 @@
                             <li>- If you let Barry fall from a platform, he will only jump one time.</li>
                             <li>- If you jump and hit Barry with a platform in to his head, he will be unconscious and  unable to jump.</li>
                         </ul>
+                    </div>
+                </div>
+                <div id="historyp">
+                <div class="col-lg-12 text-center visible-phone" id="sinopsis2">
+                    <h1>Help Barry to get home!</h1>
+                    
+                        <div>
+                            Barry has been lost into the woods and he doesn't know how to go back home. He only remember that his home is close to the river.<br/><br/>
+                            Help Barry to jump through the platforms with your own hands to get back home. The more time you get, the closer you'll be from home.<br/><br/>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -168,7 +178,7 @@
 <%}%>
 
 <footer>
-    <div id="contact" class='text-center'>
+    <div id="contact" class='text-center visible-desktop visible-tablet'>
         <div id="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2">
@@ -179,25 +189,21 @@
                     <p>
                         You can contact me with the next social networks and by e-mail. I'll be glad to recieve all the possible feedback.  
                     </p><br/>
-                    <!-- Botón Contacto -->
-                    <!--<a href="#myModal" type="button" class="btn" data-toggle="modal">Contact me</a>
-                    <!-- Modal -->
-                    <!-- <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                         <div class="modal-header">
-                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                             <h3 id="myModalLabel">Contact me!</h3>
-                         </div>
-                         <div class="modal-body">
-                             <p>Feel free to email me to provide some feedback for the game, such as suggestions or 
-                                 if you want to collaborate with me in future games.</p>
-                         </div>
-                         <div class="modal-footer">
-                             <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-                         </div>
-                     </div> 
-                 </div>
-                    <!-- <div  id="social" class="col-sm-6 col-sm-offset-3 text-center">
-                     </div> -->
+                    <ul class="list-inline">
+                        <li class="socialNetwork"><a href="https://plus.google.com/u/0/117592499660421319614/posts"><img src="img/google.png" alt="" /></a>
+                        </li>
+                        <li class="socialNetwork"><a href="https://twitter.com/Curic21"><img src="img/twitter.png" alt="" /></a>
+                        </li>
+                        <li class="socialNetwork"><a href="https://www.linkedin.com/profile/view?id=300092268&trk=nav_responsive_tab_profile"><img src="img/linkedin.png" alt="" /></a>
+                        </li>
+                    </ul><br/>
+                    <p><a class="btn-circle"><i class="icon-envelope"></i></a>&nbsp;&nbsp;<b>jorgeeslavabarrera@gmail.com</b></p>
+
+                </div>
+                <div id='contactme2' class="hidden-desktop hidden-tablet">
+                    <p>
+                        You can contact me with the next social networks and by e-mail. I'll be glad to recieve all the possible feedback.  
+                    </p><br/>
                     <ul class="list-inline">
                         <li class="socialNetwork"><a href="https://plus.google.com/u/0/117592499660421319614/posts"><img src="img/google.png" alt="" /></a>
                         </li>
@@ -212,4 +218,5 @@
             </div>
         </div>
     </div>
+
 </footer>
