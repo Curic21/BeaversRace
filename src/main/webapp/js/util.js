@@ -178,8 +178,7 @@ function inicializacion() {
             yearSuffix: ''};
         $.datepicker.setDefaults($.datepicker.regional['es']);
     });
-
-    //para solucionar el bug de la autollamada recursiva 
+//para solucionar el bug de la autollamada recursiva 
     //muy dificil de encontrar y depurar
     //dos modales a la vez se pasan el foco de una a la otra
     //https://github.com/twbs/bootstrap/issues/4781

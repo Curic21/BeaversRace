@@ -16,11 +16,6 @@ import net.daw.helper.Conexion;
 import net.daw.helper.EncodingUtil;
 
 
-
-/**
- *
- * @author Alvaro
- */
 public class UsuarioSave implements GenericOperation {
 
     @Override

@@ -6,7 +6,7 @@
 <% if (user != null) {%>                         
 <div>
     <!-- LOGO -->
-    <div id="top" class="header visible-lg" align='center'>
+    <div id="top" class="header" align='center'>
         <div class="vert-text"><h1><img src="img/logo.png" id="logo" /></h1></div>
     </div>
     <!-- /LOGO -->
@@ -16,37 +16,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 hidden-phone" id="sinopsis3">
-                    <h1 class="text-center">Help Barry to get home!</h1>
-                    <div class="text-center">
-                        Barry has been lost into the woods and he doesn't know how to go back home. He only remember that his home is close to the river.<br/><br/>
-                        Help Barry to jump through the platforms with your own hands to get back home. The more time you get, the closer you'll be from home.<br/><br/>
-                    </div>
-                    <div class="list">
-                        <b>· Controls:</b>
-                        <ul> 
-                            <li>- Once you push Start, you'll have to push the screen to Barry begins to run.</li>
-                            <li>- If Barry is running, push again the screen to jump.</li>
-                        </ul>
-                        <b>· Rules:</b>
-                        <ul>
-                            <li>- If you Jump from a platform, Barry can jump again.</li>
-                            <li>- If you let Barry fall from a platform, he will only jump one time.</li>
-                            <li>- If you jump and hit Barry with a platform in to his head, he will be unconscious and  unable to jump.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div id="historyp2">
-                    <div class="col-lg-12 text-center visible-phone" id="sinopsisp2">
-                        <h1>Help Barry to get home!</h1>
-                        <div>
-                            Barry has been lost into the woods and he doesn't know how to go back home. He only remember that his home is close to the river.<br/><br/>
-                            Help Barry to jump through the platforms with your own hands to get back home. The more time you get, the closer you'll be from home.<br/><br/>
-                        </div>
-                    </div>
-                </div>
+                     <img class="imgdesk" alt="" src="img/scroll0.png"/>
             </div>
         </div>
-    </div><br /><br />
+    </div>
     <!-- /history -->
 
     <!-- Screenshots -->
@@ -97,7 +70,7 @@
 
 <div>
     <!-- LOGO -->
-    <div id="top" class="header visible-lg" align='center'>
+    <div id="top" class="header" align='center'>
         <div class="vert-text"><h1><img src="img/logo.png" id="logo2" /></h1></div>
     </div>
     <!-- /LOGO -->
@@ -106,39 +79,11 @@
     <div id="history">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 text-center hidden-phone" id="sinopsis1">
-                    <h1>Help Barry to get home!</h1>
-                    <div>
-                        Barry has been lost into the woods and he doesn't know how to go back home. He only remember that his home is close to the river.<br/><br/>
-                        Help Barry to jump through the platforms with your own hands to get back home. The more time you get, the closer you'll be from home.<br/><br/>
-                    </div>
-                    <div class="list">
-                        <b>· Controls:</b>
-                        <ul> 
-                            <li>- Once you push Start, you'll have to push the screen to Barry begins to run.</li>
-                            <li>- If Barry is running, push again the screen to jump.</li>
-                        </ul>
-                        <b>· Rules:</b>
-                        <ul>
-                            <li>- If you Jump from a platform, Barry can jump again.</li>
-                            <li>- If you let Barry fall from a platform, he will only jump one time.</li>
-                            <li>- If you jump and hit Barry with a platform in to his head, he will be unconscious and  unable to jump.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div id="history2">
-                    <div class="col-lg-12 text-center visible-phone" id="sinopsis2">
-                        <h1>Help Barry to get home!</h1>
-
-                        <div>
-                            Barry has been lost into the woods and he doesn't know how to go back home. He only remember that his home is close to the river.<br/><br/>
-                            Help Barry to jump through the platforms with your own hands to get back home. The more time you get, the closer you'll be from home.<br/><br/>
-                        </div>
-                    </div>
-                </div>
+                    <div class="col-lg-12 text-center hidden-phone" id="sinopsis1">
+                    <img class="imgdesk" alt="" src="img/scroll0.png"/>
             </div>
         </div>
-    </div><br /><br />
+    </div>
     <!-- /history -->
 
     <!-- Screenshots -->

@@ -15,7 +15,6 @@ public class UsuarioBean {
     private String password = "";
     private String email = "";
     private Integer tipoUsuario = 0;
-    //private Double score = 0.0;
 
     public UsuarioBean() {
     }
@@ -87,13 +86,5 @@ public class UsuarioBean {
     public void setPassword(String password) {
         this.password = password;
     }
-    /*
-        public Double getScore() {
-        return score;
-    }
-
-    public void setScore(Double score) {
-        this.score = score;
-    }
-*/
+   
 }
