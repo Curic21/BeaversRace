@@ -90,7 +90,7 @@
                     </div> 
                     <center class='visible-phone'>
                         <hr>
-                        &copy; <b>Jorge Eslava Barrera</b></center> 
+                        &copy; <b>Jorge Eslava (2015)</b></center> 
 
                 </div>
             </div>

@@ -119,10 +119,10 @@
                 <h2>Download</h2> 
             </div>
             <div>
-                <img id="downloadpic" src="img/download.png" alt="download" />
+                <img id="downloadpic" src="img/download1.png" alt="download" />
             </div>
             <div>
-                <img id="googleplay" src="img/googleplay.png" alt="googleplay" />
+                <a href="https://play.google.com/store/apps/details?id=com.FairlyGames.Pixiestale"><img id="googleplay" src="img/googleplay.png" alt="googleplay" /></a>
             </div>
         </div>
     </div>
