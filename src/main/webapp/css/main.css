@@ -182,55 +182,9 @@ label.error {
 
 */
 .imgmobile{
-    // margin-top: 3em;
-   // background-image: url("../img/scroll1.png");
-    //background-repeat: no-repeat;
-   // background-size: 100%;
    max-width: 10%;
 }
-/*
-#sinopsis3{
-    color: #330000;
-    font-family:Times New Roman;
-    font-weight: bold;
-    font-style: italic;
-    font-size: 1.7vw;
-    width: 50%;
-    padding-left: 13em;
-    padding-top: 5em;
-    padding-bottom: 3em;
-}
-#sinopsis3>h1{
-    color: #330000;
-    padding-top: 1em;
-    font-family:Times New Roman;
-    text-shadow: 1px 1px  black;
-    font-weight: bold;
-    font-style: italic;
-    font-size: 3vw;
-}
 
-
-
-#sinopsis2 , #sinopsisp2{
-    color: #330000;
-    font-family:Times New Roman;
-    font-weight: bold;
-    font-style: italic;
-    font-size: 0.8em;
-    width: 60%;
-    padding-left: 5.5em;
-    padding-bottom: 3.5em;
-
-}
-
-#sinopsis2>h1 , #sinopsisp2 > h1{
-    color: #330000;
-    padding-top: 2.7em;
-    font-family:Times New Roman;
-    font-weight: bold;
-    font-size: 1.7em;
-}*/
 
 a:hover{
     color: #cc6600 !important;

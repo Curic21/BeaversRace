@@ -79,15 +79,15 @@
                     out.print("</div>");
                 %>    
                 <div class="row-fluid">
-                    <div class="span12 hidden-phone">
+                    <center><div class="span12 hidden-phone">
                         <% if (user != null) { %>
                         <div id="copyright2">
-                            <center><hr>&copy; <b>Jorge Eslava Barrera</b></center>
-                        </div> 
+                            <hr>&copy; <b>Jorge Eslava Barrera</b>
+                        </div>
                         <%} else { %>
                         <center><hr id="copyright">&copy; <b>Jorge Eslava Barrera</b></center> 
                             <% };%>
-                    </div> 
+                    </div></center>
                     <center class='visible-phone'>
                         <hr>
                         &copy; <b>Jorge Eslava (2015)</b></center> 
