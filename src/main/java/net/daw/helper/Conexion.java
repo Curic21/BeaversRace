@@ -40,4 +40,5 @@ public class Conexion {
     public static String getDatabaseHost() {
         return System.getenv("OPENSHIFT_MYSQL_DB_HOST");
     }
+    
 }
