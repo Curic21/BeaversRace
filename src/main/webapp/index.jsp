@@ -78,52 +78,61 @@
                 <%
                     out.print("</div>");
                 %>    
-                <div class="row-fluid">
-                    <center><div class="span12 hidden-phone">
-                        <% if (user != null) { %>
-                        <div id="copyright2">
-                            <hr>&copy; <b>Jorge Eslava Barrera</b>
-                        </div>
-                        <%} else { %>
-                        <center><hr id="copyright">&copy; <b>Jorge Eslava Barrera</b></center> 
-                            <% };%>
-                    </div></center>
-                    <center class='visible-phone'>
+                <center>
+                    <!--LICENCIA -->
+                    <div class="row-fluid">
                         <hr>
-                        &copy; <b>Jorge Eslava (2015)</b></center> 
+                        &copy; <b>Jorge Eslava (2015)</b>
 
-                </div>
-            </div>
-        </div>                    
+                        <br /><br />
 
-        <!-- carga de javascript -->
-
-        <!--Bootstrap-->
-        <script src="js/vendor/bootstrap.min.js"></script>
-        <script src="js/vendor/bootstrap-transition.js"></script>
-        <script src="js/vendor/bootstrap-alert.js"></script>
-        <script src="js/vendor/bootstrap-modal.js"></script>
-        <script src="js/vendor/bootstrap-dropdown.js"></script>
-        <script src="js/vendor/bootstrap-scrollspy.js"></script>
-        <script src="js/vendor/bootstrap-tab.js"></script>
-        <script src="js/vendor/bootstrap-tooltip.js"></script>
-        <script src="js/vendor/bootstrap-popover.js"></script>
-        <script src="js/vendor/bootstrap-button.js"></script>
-        <script src="js/vendor/bootstrap-collapse.js"></script>
-        <script src="js/vendor/bootstrap-carousel.js"></script>
-        <script src="js/vendor/bootstrap-typeahead.js"></script>   
-        <!--------------------------------------->
-
-        <!--Archivos Locales-->
-        <script src="js/util.js" charset="UTF-8"></script>
-        <script src="js/main.js" charset="UTF-8"></script>
-        <script src="js/control/usuario.js" charset="UTF-8"></script>
-        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-        <!--------------------------------------->
+                        <!--tipo de Licencia-->
+                        <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+                            <img alt="Licencia de Creative Commons" style="border-width:0" 
+                                 src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>
+                    </div>
+                </center>
 
 
-        <!-- Custom JavaScript for Smooth Scrolling and SideMenu Links-->     
-        <script>
+                <!-- Info de la Licencia
+                 <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/InteractiveResource" 
+                       property="dct:title" rel="dct:type">Beaver's Race</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="aversrace-jordieslava.rhcloud.com" 
+                       property="cc:attributionName" rel="cc:attributionURL">Jorge Eslava</a> is licensed under a <a rel="license" 
+                       href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+                     Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional License</a>.
+                -->
+            </div></center>
+    </div>
+</div>                    
+
+<!-- carga de javascript -->
+
+<!--Bootstrap-->
+<script src="js/vendor/bootstrap.min.js"></script>
+<script src="js/vendor/bootstrap-transition.js"></script>
+<script src="js/vendor/bootstrap-alert.js"></script>
+<script src="js/vendor/bootstrap-modal.js"></script>
+<script src="js/vendor/bootstrap-dropdown.js"></script>
+<script src="js/vendor/bootstrap-scrollspy.js"></script>
+<script src="js/vendor/bootstrap-tab.js"></script>
+<script src="js/vendor/bootstrap-tooltip.js"></script>
+<script src="js/vendor/bootstrap-popover.js"></script>
+<script src="js/vendor/bootstrap-button.js"></script>
+<script src="js/vendor/bootstrap-collapse.js"></script>
+<script src="js/vendor/bootstrap-carousel.js"></script>
+<script src="js/vendor/bootstrap-typeahead.js"></script>   
+<!--------------------------------------->
+
+<!--Archivos Locales-->
+<script src="js/util.js" charset="UTF-8"></script>
+<script src="js/main.js" charset="UTF-8"></script>
+<script src="js/control/usuario.js" charset="UTF-8"></script>
+<script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+<!--------------------------------------->
+
+
+<!-- Custom JavaScript for Smooth Scrolling and SideMenu Links-->     
+<script>
             $(function() {
                 //'a[href*=#]'
                 $('a[href*=#]').click(function() {
@@ -170,7 +179,7 @@
                 usuarioControl.inicia(usuarioView, 1, null, null, 10, null, null, null, null);
                 return false;
             });
-        </script>
-    </body>
+</script>
+</body>
 </html>
 
