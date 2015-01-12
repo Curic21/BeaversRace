@@ -24,12 +24,7 @@ public class ControlJson extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, Exception {
-        //retardo debug
-//        try {
-//            Thread.sleep(80);
-//        } catch (InterruptedException ex) {
-//            Thread.currentThread().interrupt();
-//        }
+
         //control de autenticación
         if (request.getSession().getAttribute("usuarioBean") == null) {
             Gson gson = new Gson();

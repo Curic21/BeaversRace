@@ -1,8 +1,6 @@
-<%-- 
-    Document   : login
-    Created on : Jan 15, 2013, 11:54:03 AM
-    Author     : rafa
---%>
+
+
+<!--FORMULARIO PARA INICIAR SESIÓN-->
 
 <form id="loginForm" action="jsp" class="form-horizontal" method="post">
     <h1>Login's Form</h1>
@@ -26,6 +24,8 @@
         </div>
     </div>
 </form>
+
+<!--VALIDACIÓN DE LOS DATOS INSERTADOS -->
 
 <script>
     $('#loginForm').validate({

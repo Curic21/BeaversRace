@@ -9,6 +9,7 @@
 <p class="navbar-text pull-right">           
     <%if (user != null) {%>
     <%
+        //ASIGNAMOS UN NOMBRE A CADA TIPO DE USUARIO
         String us = user.getLogin();
         String usuario = us.substring(0, 1).toUpperCase() + us.substring(1);
         String permisos = null;

@@ -6,6 +6,7 @@
 
     <% if (oUsuario != null) {%>
     
+    <!--PÁGINA DONDE SE VA A COLOCAR EL JUEGO EN FORMATO DE ARCHIVO UNITY3D -->
     
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <script type='text/javascript' src='jsp/game/jquery.min.js'></script>

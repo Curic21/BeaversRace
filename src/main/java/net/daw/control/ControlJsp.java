@@ -80,8 +80,6 @@ public class ControlJsp extends HttpServlet {
                         UsuarioDao oUsuarioDao = new UsuarioDao(Conexion.getConection());
                         oUsuario = oUsuarioDao.getFromLogin(oUsuario);
                         if (oUsuario.getId() != 0) {
-                            //rellena el tipo de usuario
-//                            oUsuario = oUsuarioDao.type(oUsuario);
                             request.getSession().setAttribute("usuarioBean", oUsuario);
                         }
                     }
@@ -111,11 +109,7 @@ public class ControlJsp extends HttpServlet {
 
                         request.getSession().setAttribute("usuarioRegistrado", oUsuario);
                         System.out.println(oUsuario.getId());
-//                        if (oUsuario.getId() != 0) {
-//                            //rellena el tipo de usuario
-//                            oUsuario = oUsuarioDao.type(oUsuario);
-//                            request.getSession().setAttribute("usuarioBean", oUsuario);
-//                        }
+
                     }
                 }
                 

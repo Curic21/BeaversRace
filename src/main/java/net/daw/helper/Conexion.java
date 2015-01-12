@@ -14,7 +14,7 @@ public class Conexion {
     };
 
     public static Tipo_conexion getConection() {
-        return Tipo_conexion.DriverManager;
+        return Tipo_conexion.DataSource;
     }
 
     public static String getDatabaseName() {

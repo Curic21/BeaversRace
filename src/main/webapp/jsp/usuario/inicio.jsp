@@ -3,6 +3,7 @@
 <%UsuarioBean user = (UsuarioBean) request.getSession().getAttribute("usuarioBean");%>
 
 <!-- Si el usuario está logueado o no, mostrará la web de un tamaño u otro -->
+
 <% if (user != null) {%>                         
 <div>
     <!-- LOGO -->
@@ -115,6 +116,7 @@
         </div>
     </div>
     <!-- Screenshots -->
+    
     <!-- Download -->
     <div id="download" class="container text-center">
         <div class="row">
